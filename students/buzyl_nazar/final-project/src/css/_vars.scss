@@ -3,11 +3,28 @@ $green: #008000;
 $chambray:#3b5998;
 $color-white: #ffffff;
 $color-black: #000000;
+$dodger-blue: #5474FD;
+$mercury: #E8E8E8;
+$dusty-gray:#999999;
+$mine-shaft: #232323;
+$dark-mine-shaft:#333333;
+$red-orange: #ff2727;
 $grey: #bababa;
 $orange: #ff6033;
 $brown: #a52a2a;
+$pickled-bluewood: #2C4058;
+$malibu: #55B7FF;
+$river-bed:#4b5562;
+$heliotrope: #7E5AFF;
+$iron:#d5d9de;
+$flax-smoke: #7d8965;
+$dingley: #6e774a;
+$green-mist: #ced6af;
+$norway: #9DB892;
+$spring-wood:#f7f8f3;
+$tuatara: #1c1c1b;
 
-$input-border-color: $grey;
+$input-border-color: $green-mist;
 $default-border-radius: 5px;
 
 $facebook-color: $chambray;
@@ -17,13 +34,13 @@ $default-border: 1px solid $input-border-color;
 $container-width: 1200px;
 $default-gap: 15px;
 
-$body-bg-color: $green;
-$border-color: $alto;
+$body-bg-color: $dingley;
+$border-color:$green-mist;
 
 $font-folder-path: '../fonts/';
 $folder-image: '../image/';
 
-$font-default-name: 'Raleway';
+$font-default-name: 'Oswald';
 $font-secondary-name: 'Roboto';
 
 $follback: Arial,
@@ -36,7 +53,7 @@ $font-secondary: $font-secondary-name,
 $follback;
 
 $default-font-size: 16px;
-$default-color-text: $color-black;
+$default-color-text: $color-white;
 
 
 $breack-points: ("xl": 1200px,

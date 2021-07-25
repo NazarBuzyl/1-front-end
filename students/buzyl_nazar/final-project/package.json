@@ -28,5 +28,8 @@
         "sass": "^1.35.1",
         "webpack-stream": "^6.1.2"
     },
-    "dependencies": {}
+    "dependencies": {
+        "jquery": "^3.6.0",
+        "vue": "^2.6.14"
+    }
 }

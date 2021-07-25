@@ -1,0 +1,29 @@
+.header {
+    &__cart {}
+}
+
+.cart {
+    &__container {}
+
+    &__visible-part {}
+
+    &__hover-block {}
+
+    &__item {}
+}
+
+.cart-product {
+    &__image {}
+
+    &__name {}
+
+    &__price {}
+
+    &__currensy-symbol {}
+
+    &__currensy-name {}
+
+    &__count-price {}
+
+    &__final-price {}
+}

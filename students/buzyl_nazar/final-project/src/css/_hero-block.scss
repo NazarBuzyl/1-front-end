@@ -1,0 +1,29 @@
+.header{
+    @include bg-cover('../image/bg_header.jpg');
+    height: 100vh;
+    overflow: hidden;
+}
+.hero-block {
+}
+.main-slider {
+}
+.slider-item {
+    // height: 100vh;
+
+		&__container {
+		}
+
+		&__strong {
+		}
+
+		&__link {
+		}
+}
+.container {
+}
+.catalog-slider {
+}
+.application-slider {
+}
+.project-slider {
+}

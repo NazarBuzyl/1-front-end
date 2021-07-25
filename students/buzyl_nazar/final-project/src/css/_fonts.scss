@@ -2,4 +2,8 @@
 
 @include fonts($font-default-name, 'oswald-v36-latin-regular', 400);
 
+@include fonts($font-default-name, 'oswald-v36-latin_cyrillic-300', 300);
+
+@include fonts($font-default-name, 'oswald-v36-latin_cyrillic-regular', 400);
+
 // @include fonts($font-default-name, 'raleway-v18-latin-900', 900);
