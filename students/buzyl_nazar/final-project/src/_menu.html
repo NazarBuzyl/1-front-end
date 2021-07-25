@@ -1,0 +1,167 @@
+<div class="header__menu">
+    <div class="row">
+        <!-- Menu -->
+        <div class="col-5">
+            <nav class="menu" id="menu">
+                <ul class="menu__list">
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Головна</a>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Послуги</a>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="">Товари</a>
+                        <span class="menu__arrow"></span>
+                        <ul class="sub-menu sub-menu_state_full">
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Контролери
+                                    поливу</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Датчики
+                                    поливу</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Електромагнітні
+                                    клапани</a>
+                            </li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Роторні
+                                    дощувачі</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Статичні
+                                    дощувачі</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Форсунки
+                                    спрей</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Форсунки
+                                    ротатори MP
+                                    Rotator</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Аксесуари</a>
+                            </li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Клапанні
+                                    бокси</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Садові
+                                    гідранти</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Компресійні
+                                    фітинги
+                                    Irritec</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Труби для
+                                    поливу</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Кабель для
+                                    поливу</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Крапельний
+                                    полив</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Фільтри
+                                    поливу</a></li>
+                            <li class="sub-menu__item"><a class="sub-menu__link" href="#">Різьбові
+                                    фітинги
+                                    ПЕ
+                                    Irritec</a></li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="#">Різьбові латунні
+                                    фітинги</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="#">Кульові
+                                    крани</a></li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="#">Послуги</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Ціни</a></li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Покупцеві</a><span class="menu__arrow"></span>
+                        <ul class="sub-menu">
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="#">Що потібно знати про систему
+                                    автополиву?</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Про нас</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Наші сертифікати</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Портфоліо</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Доставка і оплата</a></li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Повернення товару</a>
+                            </li>
+                            <li class="sub-menu__item">
+                                <a class="sub-menu__link" href="">Статті</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Контакти</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Logo Company name -->
+        <div class="col-3">
+            <div class="header__company-info">
+                <a class="header__company-logo" href="#" title="">
+                    <img class="header-company-info__img" src="#" alt="">
+                </a>
+                <!-- <div class="header__company-name">
+                    <a class="header__name-link" href="#" title=""></a>
+                </div> -->
+            </div>
+        </div>
+        <!--Login Search Cart-->
+        <div class="col-4">
+            <div class="form-popup login-form" id="loginForm">
+                <form action="get" class="form-container">
+                    <h1>Вход</h1>
+
+                    <label for="email"><b>Пошта</b></label>
+                    <input type="text" placeholder="Введите Почту" name="email" required>
+
+                    <label for="psw"><b>Пароль</b></label>
+                    <input type="password" placeholder="Введите Пароль" name="psw" required>
+
+                    <button type="submit" class="btn">Війти</button>
+                    <button type="submit" class="btn cancel" onclick="closeForm()">Закрити</button>
+                    <a href="#">Зареєструватись</a>
+                </form>
+            </div>
+            <form id="search" class="header__search-form search" name="" method="get" action="">
+                <input id="search__input" autocomplete="off" maxlength="1000" type="text">
+                <button class="search__button"><span class="search-icon"></span>search</button>
+            </form>
+            <div id="cart" class="header__cart cart">
+                <div class="cart__container">
+                    <div class="">
+                        Cart<span>{{ cartList.length }}</span>
+                    </div>
+                    <div class="cart__hover">
+                        <div class="cart__item cart-product" v-for="(product, index) in cartList"
+                            :key="product.id">
+                            <img class="cart-product__image " :src="pathImageFolder + product.img"
+                                :alt="product.name">
+                            <strong class="cart-product__name">{{product.name}}</strong>
+                            <p class="cart-product__price">
+                                <span
+                                    class="cart-product__currensy-symbol">{{ currensySymbol }}</span>{{ product.specialPrice.toLocaleString() }}
+                                <span class="cart-product__currensy-name">{{currensyName}}</span></p>
+                            <p class="cart-product__count-price">
+                                <span
+                                    class="cart-product__currensy-symbol">{{ currensySymbol }}</span>{{ (product.specialPrice * product.qty).toLocaleString() }}
+                                <span class="cart-product__currensy-name">{{currensyName}}</span></p>
+                            <div>
+                                <button @click="setQtyProduct(product, false)">-</button>
+                                <input type="text" v-model="product.qty">
+                                <button @click="setQtyProduct(product, true)">+</button>
+                                <!-- <button @click="removeProduct(index)">Удалить</button> -->
+                            </div>
+                        </div>
+                        <div class="cart-product__final-price" v-if="getTotalPrice !== 0">
+                            <span
+                                class="cart-product__currensy-symbol">{{currensySymbol}}</span>{{ getTotalPrice }}
+                            <span class="cart-product__currensy-name">{{currensyName}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
