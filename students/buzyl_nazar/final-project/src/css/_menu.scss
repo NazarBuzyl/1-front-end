@@ -10,9 +10,10 @@
 .menu {
     padding-left: 30px;
     font-family: $font-default-name;
-    font-weight: 400;
+    font-weight: 300;
     display: flex;
     justify-content: flex-start;
+    letter-spacing: 1px;
 
     &__burger-btn {}
 
@@ -58,13 +59,11 @@
 
     &__link {
         text-decoration: none;
-        // text-transform: uppercase;
-        font-family: $font-dafault;
-        // font-weight: 700;
         font-size: 16px;
         color: $color-white;
         display: inline-block;
-        padding: 10px 20px;
+        padding: 0px 20px;
+        line-height: 32px;
         position: relative;
 
         &::before {
@@ -72,6 +71,7 @@
             position: absolute;
             display: block;
             width: calc(100% - 20px);
+            border-radius: 10px;
             left: 10px;
             bottom: 4px;
             height: 2px;
@@ -258,7 +258,7 @@
     padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(163, 163, 163, 0.4);
+    background-color: rgba(48, 48, 48, 0.4);
     border-radius: 5px;
     left: 0;
 

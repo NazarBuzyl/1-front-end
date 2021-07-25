@@ -1,25 +1,140 @@
 .header {
+
     &__login {}
+
+    &__open-login {
+        background-color: initial;
+        border: none;
+        color: $default-color-text;
+        line-height: 32px;
+        cursor: pointer;
+        padding: 0 25px;
+        letter-spacing: 1px;
+        font-weight: 300;
+    }
 
     &__login-form {}
 }
 
 .open-btn {}
 
-.form-popup {}
+.form-popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .login-form {
+
     &_close-btn {}
+
+
+    &__title {
+        font-size: 20px;
+    }
+
+
+    &__signature {
+        font-size: 14px;
+    }
+
 
     &__email {}
 
+
+    &__input {
+        outline: none;
+        border: none;
+        color: #555;
+        line-height: 50px;
+        display: block;
+        width: 100%;
+        background: 0 0;
+        padding: 10px 15px;
+    }
+
+
     &__psw {}
 
-    &__login-btn {}
+    &__login-btn {
+        color: #fff;
+        letter-spacing: 3px;
+        border: none;
+        line-height: 50px;
+        display: block;
+        width: 100%;
+        background: 0 0;
+        padding: 10px 15px;
+        background-color: $dingley;
+    }
+
+    &__link {
+        margin-top: 115px;
+        display: block;
+        text-align: center;
+    }
 }
 
-.form-container {}
+.form-container {
+    position: relative;
+    width: 380px;
+    overflow: hidden;
+    padding: 15px;
+    background-color: $spring-wood;
+    border: 2px solid $green-mist;
+    color: $tuatara;
+}
+
+.input {}
 
 .btn {}
 
-.close-btn {}
+.close-btn {
+    background-color: initial;
+    border: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 5px;
+    top: 5px;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 1.5px;
+        background-color: #E8E8E8;
+        position: absolute;
+    }
+
+    &::before {
+        transform: rotate(-45deg);
+    }
+
+    &::after {
+        transform: rotate(45deg);
+    }
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    // width: 100%;
+    // padding: 15px;
+    // margin: 5px 0 22px 0;
+    // border: none;
+    // background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    // background-color: #ddd;
+    // outline: none;
+}
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}

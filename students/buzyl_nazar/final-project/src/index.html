@@ -130,26 +130,26 @@
                     </div>
                 </div>
                 <!--Login Search Cart-->
-                <!-- <div class="col-4">
+                <div class="col-4">
                     <div class="header__login">
-                        <button class="open-btn" onclick="openForm()">Ввійти</button>
+                        <button class="open-btn header__open-login" id="loginOpen">Увійти</button>
                         <div class="header__login-form form-popup login-form" id="loginForm">
                             <form action="get" class="form-container">
-                                <h1>Вход</h1>
+                                <p class="login-form__title">Вхід</p>
+                                <p class="login-form__signature">Для входу введіть свою email адресу</p>
 
-                                <label for="email" class="login-form__email"><b>Пошта</b></label>
-                                <input type="text" placeholder="Введите Почту" name="email" required>
+                                <!-- <label for="email" class="login-form__email"><b>Пошта</b></label> -->
+                                <input class="login-form__input input" type="text" placeholder="Email" name="email" required>
 
-                                <label for="psw" class="login-form__psw"><b>Пароль</b></label>
-                                <input type="password" placeholder="Введите Пароль" name="psw" required>
+                                <!-- <label for="psw" class="login-form__psw"><b>Пароль</b></label> -->
+                                <input class="login-form__input input" type="password" placeholder="Password" name="psw" required>
 
-                                <button type="submit" class="btn login-form__login-btn">Ввійти</button>
-                                <button type="submit" class="login-form_close-btn close-btn"
-                                    onclick="closeForm()">Закрити</button>
-                                <a href="#">Зареєструватись</a>
+                                <button type="submit" class="btn login-form__login-btn">Увійти</button>
+                                <button type="submit" class="login-form_close-btn close-btn" id="loginClose"></button>
+                                <a class="login-form__link" href="#">Зареєструватись</a>
                             </form>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- <div class="header__search">
                         <form id="search" class="header__search-form search" name="" method="get" action="">
                             <input id="search__input" autocomplete="off" maxlength="1000" type="text">
