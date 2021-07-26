@@ -1,6 +1,5 @@
 $alto: #ddd;
 $green: #008000;
-$chambray:#3b5998;
 $color-white: #ffffff;
 $color-black: #000000;
 $dodger-blue: #5474FD;
@@ -19,15 +18,25 @@ $heliotrope: #7E5AFF;
 $iron:#d5d9de;
 $flax-smoke: #7d8965;
 $dingley: #6e774a;
-$green-mist: #ced6af;
+// $green-mist: #ced6af;
+$green-mist: #fff;
 $norway: #9DB892;
-$spring-wood:#f7f8f3;
+// $spring-wood:#f7f8f3;
 $tuatara: #1c1c1b;
+$cerulean-blue: #2941C4;
+$ebony-clay: #232645;
+$scince-blue: #006cdba6;
+
+$spring-wood: #FAF9F6;
+$periwinkle-gray: #BFD6E5;
+$botticelli: #CBDEE8;
+$bali-hai: #869BB5;
+$hippie-blue: #578CB6;
+$chambray: #3F578E;
+$ebony-clay: #262B3C;
 
 $input-border-color: $green-mist;
 $default-border-radius: 5px;
-
-$facebook-color: $chambray;
 
 $default-border: 1px solid $input-border-color;
 
@@ -40,20 +49,20 @@ $border-color:$green-mist;
 $font-folder-path: '../fonts/';
 $folder-image: '../image/';
 
-$font-default-name: 'Roboto';
+$font-default-name: 'Montserrat';
 $font-secondary-name: 'Roboto';
 
 $follback: Arial,
 Helvetica,
 sans-serif;
 
-$font-dafault: $font-default-name,
+$font-default: $font-default-name,
 $follback;
 $font-secondary: $font-secondary-name,
 $follback;
 
 $default-font-size: 16px;
-$default-color-text: $color-white;
+$default-color-text: $ebony-clay;
 
 
 $breack-points: ("xl": 1200px,

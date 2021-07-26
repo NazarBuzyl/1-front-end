@@ -1,15 +1,35 @@
-// @include fonts($font-default-name, 'roboto-v27-latin-300', 300);
+// @include fonts($font-secondary-name, 'roboto-v27-latin-300', 300);
 
-// @include fonts($font-default-name, 'roboto-v27-latin-regular', 400);
+// @include fonts($font-secondary-name, 'roboto-v27-latin-regular', 400);
 
-// @include fonts($font-default-name, 'roboto-v27-latin_cyrillic-300', 300);
+// @include fonts($font-secondary-name, 'roboto-v27-latin_cyrillic-300', 300);
 
-// @include fonts($font-default-name, 'roboto-v27-latin_cyrillic-regular', 400);
+// @include fonts($font-secondary-name, 'roboto-v27-latin_cyrillic-regular', 400);
 
-// @include fonts($font-secondary-name, 'oswald-v36-latin-300', 300);
+// @include fonts($font-default-name, 'oswald-v36-latin-300', 300);
 
-// @include fonts($font-secondary-name, 'oswald-v36-latin-regular', 400);
+// @include fonts($font-default-name, 'oswald-v36-latin-regular', 400);
 
-@include fonts($font-default-name, 'oswald-v36-latin_cyrillic-300', 300);
+// @include fonts($font-default-name, 'oswald-v36-latin_cyrillic-300', 300);
 
-@include fonts($font-default-name, 'oswald-v36-latin_cyrillic-regular', 400);
+// @include fonts($font-default-name, 'oswald-v36-latin_cyrillic-regular', 400);
+
+// @include fonts($font-secondary-name, 'roboto-v27-latin-300', 300);
+
+// @include fonts($font-secondary-name, 'roboto-v27-latin-regular', 400);
+
+@include fonts($font-default-name, 'montserrat-v15-latin_cyrillic-300', 300);
+
+@include fonts($font-default-name, 'montserrat-v15-latin_cyrillic-regular', 400);
+
+@include fonts($font-default-name, 'montserrat-v15-latin_cyrillic-600', 600);
+
+@include fonts($font-default-name, 'montserrat-v15-latin_cyrillic-700', 700);
+
+// @include fonts($font-default-name, 'oswald-v36-latin-300', 300);
+
+// @include fonts($font-default-name, 'oswald-v36-latin-regular', 400);
+
+// @include fonts($font-default-name, 'oswald-v36-latin_cyrillic-300', 300);
+
+// @include fonts($font-default-name, 'oswald-v36-latin_cyrillic-regular', 400);

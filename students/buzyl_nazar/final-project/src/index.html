@@ -131,94 +131,178 @@
                 </div>
                 <!--Login Search Cart-->
                 <div class="col-4">
-                    <div class="header__login">
-                        <button class="open-btn header__open-login" id="loginOpen">Увійти</button>
-                        <div class="header__login-form form-popup login-form" id="loginForm">
-                            <form action="get" class="form-container">
-                                <p class="login-form__title">Вхід</p>
-                                <p class="login-form__signature">Для входу введіть свою email адресу</p>
+                    <div class="header__wrapper wrapper">
+                        <div class="header__login">
+                            <button class="open-btn header__open-login" id="loginOpen">Увійти</button>
+                            <div class="header__login-form form-popup login-form" id="loginForm">
+                                <form action="get" class="form-container validate-form">
+                                    <p class="login-form__title">Вхід</p>
+                                    <p class="login-form__signature">Для входу введіть свою email адресу та пароль</p>
 
-                                <!-- <label for="email" class="login-form__email"><b>Пошта</b></label> -->
-                                <input class="login-form__input input" type="text" placeholder="Email" name="email" required>
+                                    <div class="wrap-input login-form__wrap-input validate-input"
+                                        data-validate="Valid email is: a@b.c">
+                                        <input id="email" class="input login-form__input" type="text" name="email">
+                                        <span class="focus-input login-form__focus-input"
+                                            data-placeholder="Email"></span>
+                                    </div>
 
-                                <!-- <label for="psw" class="login-form__psw"><b>Пароль</b></label> -->
-                                <input class="login-form__input input" type="password" placeholder="Password" name="psw" required>
+                                    <div class="wrap-input login-form__wrap-input validate-input"
+                                        data-validate="Enter password">
+                                        <input id="password" class="input login-form__input" type="password"
+                                            name="pass">
+                                        <span class="focus-input login-form__focus-input"
+                                            data-placeholder="Password"></span>
+                                    </div>
 
-                                <button type="submit" class="btn login-form__login-btn">Увійти</button>
-                                <button type="submit" class="login-form_close-btn close-btn" id="loginClose"></button>
-                                <a class="login-form__link" href="#">Зареєструватись</a>
+                                    <button type="submit" class="btn login-form__login-btn">Увійти</button>
+                                    <button type="submit" class="login-form_close-btn close-btn"
+                                        id="loginClose"></button>
+                                    <p><a class="login-form__link" id='registrationLink' href="">Зареєструватись!</a></p>
+                                </form>
+                            </div>
+                            <div class="header__login-form form-popup login-form" id="loginForm">
+                                <form action="get" class="form-container validate-form">
+                                    <p class="login-form__title">Вхід</p>
+                                    <p class="login-form__signature">Для входу введіть свою email адресу та пароль</p>
+
+                                    <div class="wrap-input login-form__wrap-input validate-input"
+                                        data-validate="Valid email is: a@b.c">
+                                        <input id="email" class="input login-form__input" type="text" name="email">
+                                        <span class="focus-input login-form__focus-input"
+                                            data-placeholder="Email"></span>
+                                    </div>
+
+                                    <div class="wrap-input login-form__wrap-input validate-input"
+                                        data-validate="Enter password">
+                                        <input id="password" class="input login-form__input" type="password"
+                                            name="pass">
+                                        <span class="focus-input login-form__focus-input"
+                                            data-placeholder="Password"></span>
+                                    </div>
+
+                                    <button type="submit" class="btn login-form__login-btn">Увійти</button>
+                                    <button type="submit" class="login-form_close-btn close-btn"
+                                        id="loginClose"></button>
+                                    <p><a class="login-form__link" id='registrationLink' href="">Зареєструватись!</a></p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="header__search">
+                            <form id="search" class="header__search-form search" name="" method="get" action="">
+                                <input class="search__input" id="searchInput" autocomplete="off" maxlength="1000"
+                                    type="text">
+                                <div class="search__button">
+                                    <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+                                        <g>
+                                            <g>
+                                                <path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                                                S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+                                                c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+                                                 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
                             </form>
                         </div>
-                    </div>
-                    <!-- <div class="header__search">
-                        <form id="search" class="header__search-form search" name="" method="get" action="">
-                            <input id="search__input" autocomplete="off" maxlength="1000" type="text">
-                            <button class="search__button"><span class="search-icon"></span>search</button>
-                        </form>
-                    </div> -->
-                    <!-- <div id="cart" class="header__cart cart">
-                        <div class="cart__container">
-                            <div class="cart__visible-part">
-                                Cart<span>{{ cartList.length }}</span>
+                        <div id="cart" class="header__cart cart">
+                            <div class="cart__visible-part" id="cartOpen">
+                                Кошик
+                                <!-- <span>{{ cartList.length }}</span> -->
                             </div>
-                            <div class="cart__hover-block">
+                            <div class="cart__container" id="cartProducts">
                                 <div class="cart__item cart-product" v-for="(product, index) in cartList"
                                     :key="product.id">
-                                    <img class="cart-product__image " :src="pathImageFolder + product.img"
-                                        :alt="product.name">
-                                    <strong class="cart-product__name">{{product.name}}</strong>
-                                    <p class="cart-product__price">
-                                        <span
-                                            class="cart-product__currensy-symbol">{{ currensySymbol }}</span>{{ product.specialPrice.toLocaleString() }}
-                                        <span class="cart-product__currensy-name">{{currensyName}}</span></p>
-                                    <p class="cart-product__count-price">
-                                        <span
-                                            class="cart-product__currensy-symbol">{{ currensySymbol }}</span>{{ (product.specialPrice * product.qty).toLocaleString() }}
-                                        <span class="cart-product__currensy-name">{{currensyName}}</span></p>
-                                    <div>
-                                        <button @click="setQtyProduct(product, false)">-</button>
-                                        <input type="text" v-model="product.qty">
-                                        <button @click="setQtyProduct(product, true)">+</button>
+                                    <div class="row">
+                                        <div class="cart__img-block">
+                                            <img class="cart-product__image " :src="pathImageFolder + product.img"
+                                                :alt="product.name">
+                                        </div>
+                                        <div class="cart-product__info-block">
+                                            <strong class="cart-product__name">{{product.name}}</strong>
+                                            <div class="cart-product__price-block">
+                                                <p class="cart-product__price">
+                                                    <span class="cart-product__currensy-symbol">
+                                                        <!-- {{ currensySymbol }} -->
+                                                    </span>
+                                                    <!-- {{ product.specialPrice.toLocaleString() }} -->
+                                                    $49.99 USD
+                                                    <span class="cart-product__currensy-name">
+                                                        <!-- {{currensyName}} -->
+                                                    </span>
+                                                </p>
+                                                <p class="cart-product__count-price">
+                                                    <span class="cart-product__currensy-symbol">
+                                                        <!-- {{ currensySymbol }} -->
+                                                    </span>
+                                                    $49.99 USD
+                                                    <!-- {{ (product.specialPrice * product.qty).toLocaleString() }} -->
+                                                    <span class="cart-product__currensy-name">
+                                                        <!-- {{currensyName}} -->
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="cart-product__qty-block cart-product__qty-block_row">
+                                            <button class="cart-product__btn-minys"
+                                                @click="setQtyProduct(product, false)">-</button>
+                                            <input class="cart-product__input" type="text" maxlength="999" v-model="product.qty">
+                                            <button class="cart-product__btn-plus"
+                                                @click="setQtyProduct(product, true)">+</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="cart-product__final-price" v-if="getTotalPrice !== 0">
-                                    <span
+                                    $49.99 USD
+                                    <!-- <span
                                         class="cart-product__currensy-symbol">{{currensySymbol}}</span>{{ getTotalPrice }}
-                                    <span class="cart-product__currensy-name">{{currensyName}}</span>
+                                    <span class="cart-product__currensy-name">{{currensyName}}</span> -->
+                                </div>
+                                <div class="cart-product__buy-block">
+                                    <button class="cart-product__buy-btn">Оформити замовлення<span
+                                            class="cart-product__btn-line"></span></button>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
         <div class="hero-block" id="heroBlock">
             <div class="main-slider slider-item">
                 <div class="container slider-item__container">
-                    <strong class="slider-item__strong">
-                    </strong>
-                    <a href="#" class="slider-item__link"></a>
+                    <div class="slider-item__info-block">
+                        <strong class="slider-item__strong">
+                        </strong>
+                        <a href="#" class="slider-item__link"></a>
+                    </div>
                 </div>
             </div>
             <div class="catalog-slider slider-item">
                 <div class="container slider-item__container">
-                    <strong class="slider-item__strong">
-                    </strong>
-                    <a href="#" class="slider-item__link"></a>
+                    <div class="slider-item__info-block">
+                        <strong class="slider-item__strong">
+                        </strong>
+                        <a href="#" class="slider-item__link"></a>
+                    </div>
                 </div>
             </div>
             <div class="application-slider slider-item">
                 <div class="container slider-item__container">
-                    <strong class="slider-item__strong">
-                    </strong>
-                    <a href="#" class="slider-item__link"></a>
+                    <div class="slider-item__info-block">
+                        <strong class="slider-item__strong">
+                        </strong>
+                        <a href="#" class="slider-item__link"></a>
+                    </div>
                 </div>
             </div>
             <div class="project-slider slider-item">
                 <div class="container slider-item__container">
-                    <strong class="slider-item__strong">
-                    </strong>
-                    <a href="#" class="slider-item__link"></a>
+                    <div class="slider-item__info-block">
+                        <strong class="slider-item__strong">
+                        </strong>
+                        <a href="#" class="slider-item__link"></a>
+                    </div>
                 </div>
             </div>
         </div>

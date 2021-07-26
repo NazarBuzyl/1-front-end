@@ -1,3 +1,17 @@
+$login-bg-color: $spring-wood;
+$login-text-color: $ebony-clay;
+$login-underline-color: $bali-hai;
+$login-font-weight: 400;
+$login-font-family: $font-default;
+$login-font-size: 16px;
+$login-letter-spacing: 1.5px;
+$login-border-radius: 0px;
+$login-bg-color-btn: $chambray;
+
+// .login-open {
+//     position: fixed;
+// }
+
 .header {
 
     &__login {}
@@ -5,12 +19,13 @@
     &__open-login {
         background-color: initial;
         border: none;
-        color: $default-color-text;
+        font-family: $login-font-family;
+        font-weight: $login-font-weight;
+        font-size: $login-font-size;
+        letter-spacing: $login-letter-spacing;
         line-height: 32px;
         cursor: pointer;
         padding: 0 25px;
-        letter-spacing: 1px;
-        font-weight: 300;
     }
 
     &__login-form {}
@@ -28,21 +43,18 @@
 
 .login-form {
 
-    &_close-btn {}
-
-
     &__title {
-        font-size: 20px;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 25px;
     }
 
 
     &__signature {
         font-size: 14px;
+        text-align: center;
+        margin-bottom: 45px;
     }
-
-
-    &__email {}
-
 
     &__input {
         outline: none;
@@ -51,8 +63,8 @@
         line-height: 50px;
         display: block;
         width: 100%;
-        background: 0 0;
-        padding: 10px 15px;
+        background-color:initial;
+        padding: 0 10px;
     }
 
 
@@ -60,6 +72,7 @@
 
     &__login-btn {
         color: #fff;
+        margin-top: 65px;
         letter-spacing: 3px;
         border: none;
         line-height: 50px;
@@ -67,29 +80,32 @@
         width: 100%;
         background: 0 0;
         padding: 10px 15px;
-        background-color: $dingley;
+        background-color: $login-bg-color-btn;
     }
 
     &__link {
+        text-decoration: none;
+        color: $login-text-color;
         margin-top: 115px;
         display: block;
         text-align: center;
+        transition: color .3s;
+
+        &:hover {
+            color: $login-bg-color-btn;
+        }
     }
 }
 
 .form-container {
     position: relative;
-    width: 380px;
+    width: 400px;
     overflow: hidden;
-    padding: 15px;
-    background-color: $spring-wood;
-    border: 2px solid $green-mist;
-    color: $tuatara;
+    padding: 55px 25px 25px;
+    background-color: $login-bg-color;
+    // border: 2px solid $login-underline-color;
+    color: $login-text-color;
 }
-
-.input {}
-
-.btn {}
 
 .close-btn {
     background-color: initial;
@@ -97,16 +113,16 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    right: 5px;
-    top: 5px;
+    right: 20px;
+    top: 20px;
 
     &::before,
     &::after {
         content: "";
         display: block;
-        width: 20px;
+        width: 22px;
         height: 1.5px;
-        background-color: #E8E8E8;
+        background-color: $login-text-color;
         position: absolute;
     }
 
@@ -119,22 +135,76 @@
     }
 }
 
-.form-container input[type=text],
-.form-container input[type=password] {
-    // width: 100%;
-    // padding: 15px;
-    // margin: 5px 0 22px 0;
-    // border: none;
-    // background: #f1f1f1;
+.wrap-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 30px;
 }
 
-.form-container input[type=text]:focus,
-.form-container input[type=password]:focus {
-    // background-color: #ddd;
-    // outline: none;
+.focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
-.form-container .btn:hover,
-.open-button:hover {
+.focus-input::after {
+    font-family: $login-font-family;
+    font-size: $login-font-size;
+    color: $login-text-color;
+    line-height: 1.2;
+
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+
+    transition: all 0.4s;
+}
+
+.wrap-input input[type=text]:focus+.focus-input::after,
+.wrap-input input[type=password]:focus+.focus-input::after,
+.wrap-input .has-val.input[type=text]+.focus-input::after,
+.wrap-input .has-val.input[type=password]+.focus-input::after {
+    top: -10px;
+}
+// [ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: initial;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
+  pointer-events: none;
+
+  font-family: $login-font-family;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  transition: opacity 0.4s;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
     opacity: 1;
+  }
 }
+

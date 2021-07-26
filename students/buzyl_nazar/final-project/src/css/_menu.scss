@@ -1,19 +1,34 @@
+$bg-menu-color: $spring-wood;
+$text-menu-color: $ebony-clay;
+$underline-hover-color: $bali-hai;
+$box-shadow-sub-menu: rgba(0, 0, 0, 0.35);
+$menu-font-weight: 400;
+$menu-font-family: $font-default;
+$menu-font-size: 16px;
+$menu-letter-spacing: 0.5px;
+$menu-border-radius: 0px;
+
 .header {
-    &__menu {}
+    &__menu {
+        background-color: $bg-menu-color;
+        // border-bottom: 2px solid $underline-hover-color;
+    }
 }
 
 .menu-open {
     overflow: hidden;
     position: fixed;
+    width: 100%;
 }
 
 .menu {
     padding-left: 30px;
-    font-family: $font-default-name;
-    font-weight: 300;
+    font-family: $menu-font-family;
+    font-weight: $menu-font-weight;
+    font-size: $menu-font-size;
+    letter-spacing: $menu-letter-spacing;
     display: flex;
     justify-content: flex-start;
-    letter-spacing: 1px;
 
     &__burger-btn {}
 
@@ -21,7 +36,7 @@
         display: flex;
 
         @media screen and (max-width: 768px) {
-            background: $color-white;
+            background: $bg-menu-color;
             position: absolute;
             display: block;
             left: 0;
@@ -59,8 +74,11 @@
 
     &__link {
         text-decoration: none;
-        font-size: 16px;
-        color: $color-white;
+        font-family: $menu-font-family;
+        font-weight: $menu-font-weight;
+        font-size: $menu-font-size;
+        color: $text-menu-color;
+        letter-spacing: $menu-letter-spacing;
         display: inline-block;
         padding: 0px 20px;
         line-height: 32px;
@@ -70,12 +88,13 @@
             content: '';
             position: absolute;
             display: block;
-            width: calc(100% - 20px);
+            width: calc(100% - 25px);
             border-radius: 10px;
-            left: 10px;
-            bottom: 4px;
-            height: 2px;
-            background-color: $norway;
+            left: 50%;
+            bottom: 2px;
+            transform: translateX(-50%);
+            height: 1px;
+            background-color: $underline-hover-color;
             visibility: hidden;
             opacity: 0;
             transition: opacity .5s ease-in-out;
@@ -90,8 +109,8 @@
                 height: 5px;
                 transform: translateY(-50%) rotate(45deg);
                 position: absolute;
-                border-right: 1px solid #fff;
-                border-bottom: 1px solid #fff;
+                border-right: 1px solid $underline-hover-color;
+                border-bottom: 1px solid $underline-hover-color;
             }
         }
     }
@@ -156,7 +175,7 @@
 }
 
 .burger-btn {
-    border: $mercury;
+    border: $text-menu-color;
     border-radius: 3px;
     width: 40px;
     height: 40px;
@@ -173,7 +192,7 @@
         display: block;
         width: 25px;
         height: 3px;
-        background-color: $mercury;
+        background-color: $text-menu-color;
         position: relative;
         transition: background-color .5s ease-in-out;
 
@@ -183,7 +202,7 @@
             display: block;
             width: 25px;
             height: 3px;
-            background-color: $mercury;
+            background-color: $text-menu-color;
             position: absolute;
             transition: all .5s ease-in-out;
         }
@@ -213,7 +232,7 @@
             ~.menu__sub-menu,
             ~.sub-menu__sub-menu {
                 height: 257px;
-                border-bottom: $color-white;
+                border-bottom: $text-menu-color;
                 overflow-y: auto;
             }
 
@@ -234,7 +253,7 @@
         content: '';
         width: 15px;
         height: 15px;
-        border: $color-white;
+        border: $text-menu-color;
         border-left: none;
         border-bottom: none;
         border-width: 3px;
@@ -258,38 +277,54 @@
     padding: 0 15px;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(48, 48, 48, 0.4);
-    border-radius: 5px;
+    background-color: $bg-menu-color;
+    box-shadow: $box-shadow-sub-menu 1px 1px 5px -1px;
+    border-radius: $menu-border-radius;
     left: 0;
-
+    
     &__item {
         padding: 10px 15px;
         width: 300px;
         position: relative;
-        
-        &:not(:last-child) .sub-menu__link {
-            border-bottom: $color-white;
-        }
+
+        // &:not(:last-child) .sub-menu__link {
+        //     border-bottom: $color-white;
+        // }
 
         @include media('md') {
             border-left: $color-white;
             background-color: $color-white;
         }
     }
-    &__state-full{
+
+    &__state-full {
         width: 1200px;
         left: -200px;
     }
+
     &__link {
         width: 100%;
         text-decoration: none;
-        font-family: $font-dafault;
-        font-size: 16px;
-        color: $color-white;
         display: inline-block;
         padding: 10px 20px;
         position: relative;
-
+        font-family: $menu-font-family;
+        font-weight: $menu-font-weight;
+        font-size: $menu-font-size;
+        color: $text-menu-color;
+        letter-spacing: $menu-letter-spacing;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $ebony-clay;
+        }
         @include media('md') {
             position: relative;
         }
@@ -315,13 +350,12 @@
             transition: height .5s ease-in-out;
         }
     }
-    
+
     @include media('md') {
         padding-left: 20px;
-        background-color: $orange;
+        background-color: #000;
     }
 }
-
 
 .header-company-info {
     &__img {}
