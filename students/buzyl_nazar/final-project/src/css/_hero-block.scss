@@ -28,18 +28,19 @@
 
 .container {}
 
-// .main-slider {
-// 	@include bg-cover('../image/bg-slider_1.jpg');
-// }
+.main-slider {
+	
+	@include bg-cover('../image/bg-slider_8.jpg');
+}
 
-// .catalog-slider {
-// 	@include bg-cover('../image/bg-slider_2.jpg');
-// }
+.catalog-slider {
+	@include bg-cover('../image/bg-slider_9.jpg');
+}
 
-// .application-slider {
-// 	@include bg-cover('../image/bg-slider_3.jpg');
-// }
+.application-slider {
+	@include bg-cover('../image/bg-slider_14.jpg');
+}
 
-// .project-slider {
-// 	@include bg-cover('../image/bg-slider_4.jpg');
-// }
+.project-slider {
+	@include bg-cover('../image/bg-slider_15.jpg');
+}

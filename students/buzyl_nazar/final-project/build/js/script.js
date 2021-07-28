@@ -13276,14 +13276,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _login_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login-form */ "./src/js/login-form.js");
+/* harmony import */ var _sliderHeroBlock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sliderHeroBlock */ "./src/js/sliderHeroBlock.js");
+/* harmony import */ var _sliderHeroBlock__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_sliderHeroBlock__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
  // Burger btn
 
-var btn = document.querySelector('#burgerMenuBtnItem');
-btn.addEventListener('click', function () {
-  document.documentElement.classList.toggle('menu-open');
-}); // Open - Close Login - Form
+var btnBurger = document.querySelector('#burgerMenuBtnItem');
+
+btnBurger.onlcick = function (e) {
+  documentElement.classList.toggle('menu-open');
+}; // Open - Close Login - Form
 // loginOpen.addEventListener("click", function () {
 //     document.getElementById("loginForm").style.display = "block";
 //     document.documentElement.classList.add('login-open');
@@ -13292,6 +13296,7 @@ btn.addEventListener('click', function () {
 //     document.getElementById("loginForm").style.display = "none";
 //     document.documentElement.classList.remove('login-open');
 // });
+
 
 var loginOpen = document.querySelector('#loginOpen');
 var formPopup = document.querySelector('#loginForm');
@@ -13323,15 +13328,27 @@ loginClose.onclick = function (e) {
 
 /***/ }),
 
+/***/ "./src/js/sliderHeroBlock.js":
+/*!***********************************!*\
+  !*** ./src/js/sliderHeroBlock.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ 0:
-/*!*******************************************************!*\
-  !*** multi ./src/js/login-form.js ./src/js/script.js ***!
-  \*******************************************************/
+/*!***********************************************************************************!*\
+  !*** multi ./src/js/login-form.js ./src/js/script.js ./src/js/sliderHeroBlock.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\final-project\src\js\login-form.js */"./src/js/login-form.js");
-module.exports = __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\final-project\src\js\script.js */"./src/js/script.js");
+__webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\final-project\src\js\script.js */"./src/js/script.js");
+module.exports = __webpack_require__(/*! B:\VSC\1-front-end\students\buzyl_nazar\final-project\src\js\sliderHeroBlock.js */"./src/js/sliderHeroBlock.js");
 
 
 /***/ })

@@ -18,7 +18,7 @@
         &::after {
             left: 0;
         }
-        bg-slider_
+
         &::before {
             right: 0;
         }
@@ -39,7 +39,7 @@
         background-color: $hippie-blue;
         font-size: 14px;
         line-height: 26px;
-        border: 0px solid $green-mist;
+        border: 0px solid $ebony-clay;
         transition: all 0.7s ease-out;
 
         &:focus {
@@ -60,7 +60,7 @@
     }
 
     &:hover .search__input {
-        border: 2px solid $green-mist;
+        border: 1px solid $ebony-clay;
         width: 200px;
         padding: 0 10px;
     }
@@ -71,3 +71,11 @@
 }
 
 .search-icon {}
+
+@media screen and (max-width: 768px) {
+    .header__search {
+        display: none;
+        visibility: visible;
+        padding-top: 100px;
+    }
+}

@@ -1,11 +1,12 @@
 import $ from 'jquery';
 import './login-form';
+import './sliderHeroBlock';
 
 // Burger btn
-let btn = document.querySelector('#burgerMenuBtnItem');
-btn.addEventListener('click', function () {
-    document.documentElement.classList.toggle('menu-open');
-});
+const btnBurger = document.querySelector('#burgerMenuBtnItem');
+btnBurger.onlcick = function (e) {
+    documentElement.classList.toggle('menu-open');
+};
 
 // Open - Close Login - Form
 
@@ -22,6 +23,7 @@ btn.addEventListener('click', function () {
 const loginOpen = document.querySelector('#loginOpen');
 const formPopup = document.querySelector('#loginForm');
 const loginClose = document.querySelector('#loginClose');
+
 loginOpen.onclick = function (e) {
     formPopup.style.display = 'block';
     let elems = document.querySelectorAll('.alert-validate');

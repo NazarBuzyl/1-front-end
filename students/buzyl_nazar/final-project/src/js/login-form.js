@@ -2,8 +2,6 @@ import $ from 'jquery';
 
 (function ($) {
     "use strict";
-
-
     /*==================================================================
     [ Focus input ]*/
     $('.input').each(function(){
@@ -85,6 +83,4 @@ import $ from 'jquery';
     //     }
         
     // });
-
-
 })($);

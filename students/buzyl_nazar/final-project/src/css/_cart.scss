@@ -108,6 +108,7 @@ $cart-bg-color-btn: $chambray;
         background-color: initial;
         outline: none;
         border: none;
+        cursor: pointer;
     }
 
     &__input {
@@ -166,6 +167,7 @@ $cart-bg-color-btn: $chambray;
         color: $color-white;
         font-size: 20px;
         letter-spacing: 2px;
+        cursor: pointer;
         // font-family: $font-secondary;
     }
 }

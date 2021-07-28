@@ -29,8 +29,13 @@ $menu-border-radius: 0px;
     letter-spacing: $menu-letter-spacing;
     display: flex;
     justify-content: flex-start;
+    // overflow: scroll;
 
     &__burger-btn {}
+    &__search {
+        visibility: hidden;
+        display: none;
+    }
 
     &__list {
         display: flex;
@@ -281,7 +286,7 @@ $menu-border-radius: 0px;
     box-shadow: $box-shadow-sub-menu 1px 1px 5px -1px;
     border-radius: $menu-border-radius;
     left: 0;
-    
+
     &__item {
         padding: 10px 15px;
         width: 300px;
@@ -313,41 +318,21 @@ $menu-border-radius: 0px;
         font-size: $menu-font-size;
         color: $text-menu-color;
         letter-spacing: $menu-letter-spacing;
-        
+
         &::before {
             content: '';
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 0px;
-            width: 8px;
-            height: 8px;
+            left: 5px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background-color: $ebony-clay;
         }
+
         @include media('md') {
             position: relative;
-        }
-    }
-
-    &__sub-menu {
-        position: absolute;
-        left: 100%;
-        top: -1px;
-        width: 100%;
-        visibility: hidden;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity .5s ease-in-out;
-
-        @include media('md') {
-            position: static;
-            visibility: visible;
-            pointer-events: all;
-            opacity: 1;
-            height: 0;
-            overflow: hidden;
-            transition: height .5s ease-in-out;
         }
     }
 
@@ -359,4 +344,31 @@ $menu-border-radius: 0px;
 
 .header-company-info {
     &__img {}
+}
+// .search__button{
+//     display: none;
+// }
+@media screen and (max-width: 768px) {
+    .menu__search {
+        padding-left: 20px;
+        display: block; 
+        visibility: visible;
+        padding-top: 100px;
+    }
+    .menu__search-form .menu__button {
+        margin-right: 10px;
+    }
+    .menu__search-form .search__input{
+        border: none !important; 
+        width: 200px;
+        padding: 0 10px;
+    }
+    .menu {
+        &__link{
+            padding: 5px 20px;
+            &::before{
+                display: none;
+            }
+        }
+    }
 }

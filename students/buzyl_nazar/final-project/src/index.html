@@ -21,6 +21,29 @@
                             <span class="burger-btn__line"></span>
                         </label>
                         <ul class="menu__list">
+                            <li>
+                                <div class="menu__search">
+                                    <form id="search" class="menu__search-form search" name="" method="get" action="">
+                                        <div class="menu__button">
+                                            <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px"
+                                                y="0px" viewBox="0 0 512.005 512.005"
+                                                style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                                                        S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+                                                        c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+                                                         M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z" />
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <input class="search__input" id="searchInput" autocomplete="off"
+                                            maxlength="1000" type="text">
+                                    </form>
+                                </div>
+                            </li>
                             <li class="menu__item js-menu-items">
                                 <a class="menu__link" href="#">Головна</a>
                             </li>
@@ -157,10 +180,11 @@
                                     <button type="submit" class="btn login-form__login-btn">Увійти</button>
                                     <button type="submit" class="login-form_close-btn close-btn"
                                         id="loginClose"></button>
-                                    <p><a class="login-form__link" id='registrationLink' href="">Зареєструватись!</a></p>
+                                    <p><a class="login-form__link" id='registrationLink' href="">Зареєструватись!</a>
+                                    </p>
                                 </form>
                             </div>
-                            <div class="header__login-form form-popup login-form" id="loginForm">
+                            <!-- <div class="header__login-form form-popup login-form" id="loginForm">
                                 <form action="get" class="form-container validate-form">
                                     <p class="login-form__title">Вхід</p>
                                     <p class="login-form__signature">Для входу введіть свою email адресу та пароль</p>
@@ -185,20 +209,23 @@
                                         id="loginClose"></button>
                                     <p><a class="login-form__link" id='registrationLink' href="">Зареєструватись!</a></p>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="header__search">
                             <form id="search" class="header__search-form search" name="" method="get" action="">
                                 <input class="search__input" id="searchInput" autocomplete="off" maxlength="1000"
                                     type="text">
                                 <div class="search__button">
-                                    <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+                                    <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px" y="0px"
+                                        viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;"
+                                        xml:space="preserve">
                                         <g>
                                             <g>
-                                                <path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                                                <path
+                                                    d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
                                                 S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
                                                 c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
-                                                 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
+                                                 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z" />
                                             </g>
                                         </g>
                                     </svg>
@@ -246,7 +273,8 @@
                                         <div class="cart-product__qty-block cart-product__qty-block_row">
                                             <button class="cart-product__btn-minys"
                                                 @click="setQtyProduct(product, false)">-</button>
-                                            <input class="cart-product__input" type="text" maxlength="999" v-model="product.qty">
+                                            <input class="cart-product__input" type="text" maxlength="999"
+                                                v-model="product.qty">
                                             <button class="cart-product__btn-plus"
                                                 @click="setQtyProduct(product, true)">+</button>
                                         </div>
@@ -268,7 +296,9 @@
                 </div>
             </div>
         </div>
-        <div class="hero-block" id="heroBlock">
+    </header>
+    <main class="main">
+        <section class="hero-block" id="heroBlock">
             <div class="main-slider slider-item">
                 <div class="container slider-item__container">
                     <div class="slider-item__info-block">
@@ -278,7 +308,7 @@
                     </div>
                 </div>
             </div>
-            <div class="catalog-slider slider-item">
+            <!-- <div class="catalog-slider slider-item">
                 <div class="container slider-item__container">
                     <div class="slider-item__info-block">
                         <strong class="slider-item__strong">
@@ -304,9 +334,16 @@
                         <a href="#" class="slider-item__link"></a>
                     </div>
                 </div>
+            </div> -->
+        </section>
+
+        <section class="about-us">
+            <div class="container">
+                <h2 class="about-us__title h2-title"></h2>
+                <strong></strong>
             </div>
-        </div>
-    </header>
+        </section>
+    </main>
     <script src="js/script.js"></script>
 </body>
 
