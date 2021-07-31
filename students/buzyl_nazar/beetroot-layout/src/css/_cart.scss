@@ -1,0 +1,183 @@
+$cart-bg-color: $color-white;
+$cart-text-color: $tuatara;
+$cart-underline-color: $green-mist;
+$cart-font-weight: 400;
+$cart-font-family: $font-default;
+$cart-font-size: 14px;
+$cart-letter-spacing: 0px;
+$cart-border-radius: 0px;
+$cart-bg-color-btn: $dingley;
+$cart-btn-text-color: $color-white;
+
+
+.header {
+    &__cart {}
+
+    &__backet-svg {}
+}
+
+.cart {
+    position: relative;
+
+    &__container {
+        box-shadow: rgba(0, 0, 0, 0.35) 1px 1px 5px -1px;
+        position: absolute;
+        box-sizing: border-box;
+        right: 1px;
+        top: 150%;
+        width: 384px;
+        padding: 20px;
+        // max-height: 50vh;
+        border: 2px solid $cart-underline-color;
+        background-color: $cart-bg-color;
+        font-family: $cart-font-family;
+        font-weight: $cart-font-weight;
+        font-size: $cart-font-size;
+        letter-spacing: $cart-letter-spacing;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &__visible-part {
+        padding: 0 30px;
+        line-height: 40px;
+        position: relative;
+        cursor: pointer;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        .cart__container {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+}
+
+.cart-product {
+    >.row {
+        padding: 0 15px;
+        height: 85px;
+        justify-content: space-between;
+    }
+
+    &__image {
+        width: 70px;
+        height: 85px;
+        display: block;
+    }
+
+    &__info-block {
+        padding: 0 15px;
+        width: 235px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &__qty-block {
+        width: 30px;
+        box-sizing: border-box;
+        // border: 2px solid $cart-underline-color;
+
+        &_row {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+        }
+    }
+
+    &__price-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 600;
+    }
+
+    &__btn-minys,
+    &__btn-plus {
+        color: $cart-text-color;
+    }
+
+
+    &__input,
+    &__btn-minys,
+    &__btn-plus {
+        height: 33.3333333%;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: initial;
+        outline: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        border-top: 1px solid $cart-underline-color;
+        border-bottom: 1px solid $cart-underline-color;
+        border-right: 1px solid $cart-underline-color;
+        border-left: 1px solid $cart-underline-color;
+        position: relative;
+        &::after,
+        &::before{
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            left: 0;
+        }
+    }
+    &__btn-plus{
+        border-top: 1px solid $cart-underline-color;
+        border-right: 1px solid $cart-underline-color;
+        border-left: 1px solid $cart-underline-color;
+    }
+    &__btn-minys{
+        border-bottom: 1px solid $cart-underline-color;
+        border-right: 1px solid $cart-underline-color;
+        border-left: 1px solid $cart-underline-color;
+    }
+    &__currensy-symbol {}
+
+    &__currensy-name {}
+
+    &__count-price {}
+
+    &__final-price {
+        margin-top: 20px;
+        line-height: 50px;
+        border-top: 2px solid $cart-underline-color;
+        border-bottom: 2px solid $cart-underline-color;
+        width: 100%;
+        text-align: end;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    &__buy-btn {
+        padding: 0 15px;
+        width: 100%;
+        line-height: 50px;
+        align-items: center;
+        border: none;
+        background-color: $cart-bg-color-btn;
+        color: $color-white;
+        font-size: 20px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-transform: uppercase;
+        // font-family: $font-secondary;
+    }
+    &__btn-line{
+        display: block;
+        width: 45px;
+        height: 100%;
+    }
+}

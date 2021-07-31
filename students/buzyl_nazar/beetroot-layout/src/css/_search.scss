@@ -1,0 +1,106 @@
+.line-after-header {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        top: -15px;
+        height: calc(100% + 34px);
+        width: 2px;
+        background-color: $color-white;
+        left: 0;
+        z-index: 14;
+    }
+}
+
+.header {
+    &__search {
+        padding: 0 20px;
+        position: relative;
+        display: block;
+
+        // &::after,
+        // &::before {
+        //     content: '';
+        //     position: absolute;
+        //     display: block;
+        //     top: -15px;
+        //     height: calc(100% + 30px);
+        //     width: 1px;
+        //     background-color: $color-white;
+        // }
+
+        // &::after {
+        //     left: 0;
+        // }
+
+        // &::before {
+        //     right: 0;
+        // }
+    }
+}
+
+.search {
+    display: flex;
+
+    &__input {
+        overflow: hidden;
+        box-sizing: border-box;
+        width: 0;
+        padding: 0;
+        display: block;
+        outline: none;
+        border: none;
+        background-color: $color-white;
+        font-size: 14px;
+        line-height: 30px;
+        border: 0px solid $green-mist;
+        transition: all 0.7s ease-out;
+        height: 32px;
+
+        &:focus {
+            width: 200px;
+            padding: 0 10px;
+        }
+    }
+
+    &__button {
+        background-color: initial;
+        border: none;
+        letter-spacing: 2px;
+        position: relative;
+        padding: 0 15px;
+        line-height: 30px;
+        overflow: hidden;
+        max-height: 30px;
+        cursor: pointer;
+    }
+
+    &:hover .search__input {
+        border: 1px solid $green-mist;
+        width: 200px;
+        padding: 0 10px;
+    }
+
+    &__icon {
+        fill: $color-white;
+    }
+
+    &__text {
+        text-transform: uppercase;
+        color: $color-white;
+        line-height: 40px;
+        cursor: pointer;
+    }
+}
+
+.search-icon {}
+
+@media screen and (max-width: 768px) {
+    .header__search {
+        display: none;
+        visibility: visible;
+        padding-top: 100px;
+    }
+}

@@ -1,0 +1,230 @@
+<div class="header__menu">
+    <div class="row">
+        <!-- Menu -->
+        <div class="col-5">
+            <nav class="menu" id="menu">
+                <ul class="menu__list">
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Головна</a>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Послуги</a>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="">Товари</a>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Ціни</a></li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Покупцеві</a><span class="menu__arrow"></span>
+                    </li>
+                    <li class="menu__item js-menu-items">
+                        <a class="menu__link" href="#">Контакти</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Logo Company name -->
+        <div class="col-3">
+            <div class="header__company-info">
+                <a class="header__company-logo" href="#" title="">
+                    CBD
+                </a>
+                <!-- <div class="header__company-name">
+                    <a class="header__name-link" href="#" title=""></a>
+                </div> -->
+            </div>
+        </div>
+        <!--Login Search Cart-->
+        <div class="col-4">
+            <div class="form-popup login-form" id="loginForm">
+                <form action="get" class="form-container">
+                    <h1>Login</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter your email" name="email" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter your password" name="psw" required>
+
+                    <button type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                    <a href="#">Regestration</a>
+                </form>
+            </div>
+            <form id="search" class="header__search-form search" name="" method="get" action="">
+                <input id="search__input" autocomplete="off" maxlength="1000" type="text">
+                <button class="search__button">
+                    <span class="search-icon">
+                        <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px" y="0px"
+                            viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;"
+                            xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                            S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+                            c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+                             M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z" />
+                                </g>
+                            </g>
+                        </svg>
+                    </span>search</button>
+            </form>
+            <div id="cart" class="header__cart cart">
+                <div class="cart__visible-part" id="cartOpen">
+                    Кошик
+                    <!-- <span>{{ cartList.length }}</span> -->
+                </div>
+                <div class="cart__container" id="cartProducts">
+                    <div class="cart__item cart-product" v-for="(product, index) in cartList" :key="product.id">
+                        <div class="row">
+                            <div class="cart__img-block">
+                                <img class="cart-product__image " :src="pathImageFolder + product.img"
+                                    :alt="product.name">
+                            </div>
+                            <div class="cart-product__info-block">
+                                <strong class="cart-product__name">{{product.name}}</strong>
+                                <div class="cart-product__price-block">
+                                    <p class="cart-product__price">
+                                        <span class="cart-product__currensy-symbol">
+                                            <!-- {{ currensySymbol }} -->
+                                        </span>
+                                        <!-- {{ product.specialPrice.toLocaleString() }} -->
+                                        $49.99 USD
+                                        <span class="cart-product__currensy-name">
+                                            <!-- {{currensyName}} -->
+                                        </span>
+                                    </p>
+                                    <p class="cart-product__count-price">
+                                        <span class="cart-product__currensy-symbol">
+                                            <!-- {{ currensySymbol }} -->
+                                        </span>
+                                        $49.99 USD
+                                        <!-- {{ (product.specialPrice * product.qty).toLocaleString() }} -->
+                                        <span class="cart-product__currensy-name">
+                                            <!-- {{currensyName}} -->
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="cart-product__qty-block cart-product__qty-block_row">
+                                <button class="cart-product__btn-minys"
+                                    @click="setQtyProduct(product, false)">-</button>
+                                <input class="cart-product__input" type="text" maxlength="999" v-model="product.qty">
+                                <button class="cart-product__btn-plus" @click="setQtyProduct(product, true)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-product__final-price" v-if="getTotalPrice !== 0">
+                        $49.99 USD
+                        <!-- <span
+                            class="cart-product__currensy-symbol">{{currensySymbol}}</span>{{ getTotalPrice }}
+                        <span class="cart-product__currensy-name">{{currensyName}}</span> -->
+                    </div>
+                    <div class="cart-product__buy-block">
+                        <button class="cart-product__buy-btn">Оформити замовлення<span
+                                class="cart-product__btn-line"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Login Search Cart-->
+    <div class="col-4">
+        <div class="form-popup login-form" id="loginForm">
+            <form action="get" class="form-container">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter your email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter your password" name="psw" required>
+
+                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                <a href="#">Regestration</a>
+            </form>
+        </div>
+        <form id="search" class="header__search-form search" name="" method="get" action="">
+            <input id="search__input" autocomplete="off" maxlength="1000" type="text">
+            <button class="search__button">
+                <span class="search-icon">
+                    <svg class="search__icon" width="30px" height="30px" id="Capa_1" x="0px" y="0px"
+                        viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;"
+                        xml:space="preserve">
+                        <g>
+                            <g>
+                                <path
+                                    d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
+                        S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
+                        c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
+                         M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z" />
+                            </g>
+                        </g>
+                    </svg>
+                </span>search</button>
+        </form>
+        <div id="cart" class="header__cart cart">
+            <div class="cart__visible-part" id="cartOpen">
+                Cart
+                <!-- <span>{{ cartList.length }}</span> -->
+            </div>
+            <div class="cart__container" id="cartProducts">
+                <div class="cart__item cart-product" v-for="(product, index) in cartList" :key="product.id">
+                    <div class="row">
+                        <div class="cart__img-block">
+                            <img class="cart-product__image " :src="pathImageFolder + product.img"
+                                :alt="product.name">
+                        </div>
+                        <div class="cart-product__info-block">
+                            <strong class="cart-product__name">{{product.name}}</strong>
+                            <div class="cart-product__price-block">
+                                <p class="cart-product__price">
+                                    <span class="cart-product__currensy-symbol">
+                                        <!-- {{ currensySymbol }} -->
+                                    </span>
+                                    <!-- {{ product.specialPrice.toLocaleString() }} -->
+                                    $49.99 USD
+                                    <span class="cart-product__currensy-name">
+                                        <!-- {{currensyName}} -->
+                                    </span>
+                                </p>
+                                <p class="cart-product__count-price">
+                                    <span class="cart-product__currensy-symbol">
+                                        <!-- {{ currensySymbol }} -->
+                                    </span>
+                                    $49.99 USD
+                                    <!-- {{ (product.specialPrice * product.qty).toLocaleString() }} -->
+                                    <span class="cart-product__currensy-name">
+                                        <!-- {{currensyName}} -->
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="cart-product__qty-block cart-product__qty-block_row">
+                            <button class="cart-product__btn-minys"
+                                @click="setQtyProduct(product, false)">-</button>
+                            <input class="cart-product__input" type="text" maxlength="999"
+                                v-model="product.qty">
+                            <button class="cart-product__btn-plus"
+                                @click="setQtyProduct(product, true)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product__final-price" v-if="getTotalPrice !== 0">
+                    $49.99 USD
+                    <!-- <span
+                        class="cart-product__currensy-symbol">{{currensySymbol}}</span>{{ getTotalPrice }}
+                    <span class="cart-product__currensy-name">{{currensyName}}</span> -->
+                </div>
+                <div class="cart-product__buy-block">
+                    <button class="cart-product__buy-btn">Оформити замовлення<span
+                            class="cart-product__btn-line"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
