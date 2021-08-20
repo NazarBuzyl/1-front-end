@@ -1,0 +1,29 @@
+.rating {
+    font-family: $font-secondary;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+
+    &__text {
+        padding-right: 16px;
+    }
+
+    &__list {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__item {
+        width: 9px;
+        height: 9px;
+        margin-right: 4px;
+        background-image: url(../image/star.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+
+    &__item_active {
+        background-image: url(../image/star-active.svg);
+    }
+}

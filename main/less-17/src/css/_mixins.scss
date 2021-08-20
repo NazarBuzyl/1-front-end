@@ -1,0 +1,57 @@
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin bg-cover($bg-image) {
+    background-image: url($bg-image);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin fonts($font-family, $font-name, $font-weight: 400, $font-style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: local(''),
+        url('#{$font-folder-path}#{$font-name}.woff2') format('woff2'),
+        url('#{$font-folder-path}#{$font-name}.woff') format('woff');
+    }
+}
+
+@mixin grid($count: 12) {
+    @for $i from 1 through $count {
+        $width: 100% / 12 * $i;
+
+        .col-#{$i} {
+            max-width: $width;
+            width: 100%;
+            flex-basis: $width;
+        }
+    }
+
+    @each $breack-point,
+    $breack-point-value in $breack-points {
+        @media screen and (max-width: $breack-point-value) {
+            @for $i from 1 through $count {
+                $width: 100% / 12 * $i;
+
+                .col-#{$breack-point}-#{$i} {
+                    max-width: $width;
+                    width: 100%;
+                    flex-basis: $width;
+                }
+            }
+        }
+    }
+}
+
+@mixin media($point) {
+    @media screen and (max-width: map-get($breack-points, $point)) {
+        @content;
+    }
+}

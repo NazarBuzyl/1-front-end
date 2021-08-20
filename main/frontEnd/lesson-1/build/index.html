@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <strong>{{ message }}</strong>
+            <br><span v-text="message"></span>
+            <br><span v-once>{{ message }}</span>
+        </p>
+        <p>
+            {{ 2 + 2 }}
+            <br>{{ number + 20 }}
+            <br>{{ !(number % 2) ? 'Четное' : 'Не четное' }}
+            <br>{{ message.split('').reverse().join('') }}
+        </p>
+
+        <p>
+            <a v-bind:href="url" v-bind:title="url">{{ url }}</a>
+            <br><a :href="url" :title="url">{{ url }}</a>
+            <br><button :disabled="disabled">{{ disabled ? 'Disabled' : 'Enabled' }}</button>
+        </p>
+
+        <h2>Вычисляемые свойства</h2>
+        <p>
+            <button :disabled="disabled">{{ textBtn }}</button>
+        </p>
+        <p>
+            {{ infoUser }}
+            <!-- так можно, но не нужно -->
+            <br><span v-html="infoUser"></span>
+        </p>
+
+        <h2>Методы</h2>
+        <!-- так не нужно -->
+        <p>{{ getInfoUser() }}</p>
+        <p><button v-on:click="incNumber(5, $event)">{{ number }}</button></p>
+        <p><button @click="incNumber(10, $event)">{{ number }}</button></p>
+
+        <h2>Модификаторы событий</h2>
+        <p><a :href="url" :title="url" @click.prevent>{{ url }}</a></p>
+        <!--
+            .stop событие не будет всплывать дальше
+            .prevent отменить действие по умолчанию
+            .capture аналог делегирования ловим событие на дочернем элементе
+            .self вызов обработчика только в случае наступления события непосредственно на данном элементе
+            .once Событие сработает только 1 раз
+            .passive
+        -->
+
+        <h2 ref="title">Получение DOM элемента</h2>
+        <p><button @click="getElem">color</button></p>
+    </div>
+
+    <div id="sss">
+        {{prim}}
+        <br><button @click="changeNumber">+</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

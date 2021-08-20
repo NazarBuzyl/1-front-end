@@ -1,0 +1,75 @@
+.blog {
+    padding: (91px-$default-gap) $default-gap;
+
+    &__item {
+        background-color: $color-white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &_position {
+            position: relative;
+
+            &::after {
+                @include psevdoEl;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 80%;
+                background: linear-gradient(0deg, rgba(0, 0, 0, .8) 0%, rgba(0, 0, 0, 0) 100%);
+            }
+
+            .blog__info {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: transparent;
+                z-index: 1;
+                padding: 28px 42px;
+            }
+
+            .blog__title {
+                color: $color-white;
+                font-size: 31px;
+                padding-right: 200px;
+                margin-bottom: 0;
+            }
+
+            .blog__author {
+                display: none;
+            }
+        }
+    }
+
+    &__image {
+        display: block;
+    }
+
+    &__info {
+        padding: 26px 27px 23px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__date {
+        color: $date-color;
+        font-size: 13px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    &__title {
+        color: $color-black;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+        margin-bottom: 64px;
+    }
+
+    &__author {
+        width: 54px;
+        height: 54px;
+    }
+}

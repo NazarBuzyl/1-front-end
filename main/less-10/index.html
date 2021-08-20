@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Raleway', Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 1.47;
+        }
+
+        input,
+        textarea,
+        button {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group,
+        .form-group-choice {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            line-height: 50px;
+            /* height: 50px; */
+            border: 1px solid goldenrod;
+            padding: 0 15px;
+            border-radius: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: salmon;
+            box-shadow: 0 0 2px 2px grey;
+        }
+
+        /* .form-group input:invalid {
+            border-color: red;
+        }
+
+        .form-group input:valid {
+            border-color: goldenrod;
+        } */
+
+        .form-group-choice label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .form-group-choice label span {
+            display: inline-block;
+        }
+
+        .form-group-choice input {
+            margin-right: 5px;
+        }
+
+        .form-group-choice input:checked+span {
+            color: green;
+        }
+
+        ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: pink;
+        }
+
+        :focus::-webkit-input-placeholder {
+            visibility: hidden;
+        }
+
+        .custom-checkbox input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            border: none;
+            pointer-events: none;
+            left: -10000px;
+        }
+
+        .custom-checkbox input+span {
+            position: relative;
+            padding-left: 35px;
+        }
+
+        .custom-checkbox input+span::before,
+        .custom-checkbox input+span::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .custom-checkbox input+span::before {
+            width: 25px;
+            height: 25px;
+            border: 1px solid grey;
+            border-radius: 3px
+        }
+
+        .custom-checkbox input+span::after {
+            width: 5px;
+            height: 10px;
+            border: 3px solid green;
+            left: 10px;
+            top: 4px;
+            transform: rotate(45deg) scale(0);
+            border-top: none;
+            border-left: none;
+            transition: transform .5s ease-in-out;
+        }
+
+        .custom-checkbox input:focus+span::before {
+            border-color: salmon;
+            box-shadow: 0 0 2px 2px grey;
+        }
+
+        .custom-checkbox input:checked+span::after {
+            transform: rotate(45deg) scale(1);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Foms</h1>
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input required type="text" name="fullName" value="" id="fullName" placeholder="xfgdfg">
+            </div>
+            <div class="form-group">
+                <label for="tel">Phone number</label>
+                <input type="tel" name="tel" value="" id="tel">
+            </div>
+
+            <div class="form-group-choice">
+                <label for="sexm">
+                    <input type="radio" name="sex" value="man" id="sexm">
+                    <span>Man</span>
+                </label>
+                <label for="sexw">
+                    <input type="radio" name="sex" value="woman" id="sexw">
+                    <span>Women</span>
+                </label>
+            </div>
+            <div class="form-group-choice custom-checkbox">
+                <label for="color">
+                    <input type="checkbox" name="color" value="red" id="color">
+                    <span>Color red</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message">dfgdgf</textarea>
+            </div>
+
+            <button type="submit">Ok</button>
+            <button type="reset">Cansel</button>
+        </form>
+    </div>
+</body>
+
+</html>

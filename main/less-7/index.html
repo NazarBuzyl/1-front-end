@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box model</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .box {
+            list-style-type: none;
+            background-color: chocolate;
+            /* padding: 10px 10px 0 10px; */
+        }
+
+        .box::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* .box li {
+            width: 33.33333%;
+            float: left;
+            padding: 10px;
+            box-sizing: border-box;
+        } */
+
+        /* .box li {
+            width: calc(33.33333% - 20px);
+            float: left;
+            margin: 10px;
+        } */
+
+        /* .box li:nth-child(3n) {
+            width: 33.3333%;
+            margin-right: 0;
+        } */
+
+        .box li>div {
+            background-color: cadetblue;
+        }
+
+        /* .box li:last-child {
+            width: calc(100% - 20px);
+        } */
+        .box {
+            font-size: 0;
+        }
+
+        .box li {
+            display: inline-block;
+            width: 33.3333%;
+            font-size: 16px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .menu {
+            list-style-type: none;
+            font-size: 0;
+        }
+
+        .menu li {
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .menu>li>a {
+            display: block;
+            background-color: darkgray;
+            padding: 20px;
+            border-right: 1px solid white;
+        }
+
+        .menu>li>a:hover {
+            background-color: grey;
+            color: white;
+        }
+
+        .text:not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        /* .text:last-child {
+            margin-top: 35px;
+        } */
+
+        .fff {
+            /* border: 1px solid transparent; */
+            background-color: lightblue;
+            padding: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="box">
+            <li>
+                <div>test cgfh</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <li>
+                <div>test</div>
+            </li>
+            <!-- <li>
+                <div>test</div>
+            </li> -->
+        </ul>
+        <ul class="menu">
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+            <li><a href="">text</a></li>
+        </ul>
+        <div class="fff">
+            <p class="text">sdfdsf</p>
+            <p class="text">sdfdsf</p>
+            <p class="text">sdfdsfdsfgdsfg dsfgdfsgdesfgh </p>
+            <p class="text">sdfdsf</p>
+        </div>
+    </div>
+</body>
+
+</html>

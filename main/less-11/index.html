@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Flex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            background-color: green;
+            /* align-items: center; */
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+        }
+
+        .item {
+            padding: 15px;
+            /* margin-bottom: 10px; */
+            /* width: 33.333%; */
+            flex-basis: 33.333%;
+        }
+
+        .item:nth-child(1) {
+            max-width: 100px;
+        }
+
+        .item:nth-child(2) {
+            flex-grow: 3;
+        }
+
+        .item:nth-child(3) {
+            flex-grow: 1;
+        }
+
+        .item div {
+            background-color: yellow;
+            height: 100%;
+        }
+
+        .item:last-child {
+            flex-grow: 1;
+        }
+
+        .btn {
+            width: 100%;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .btn span {
+            display: block;
+        }
+
+        .btn span:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        .btn span:nth-child(2) {
+            background-color: red;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="item">
+                <div>text 1<br><br><br></div>
+            </div>
+            <div class="item">
+                <div>text 2</div>
+            </div>
+            <div class="item">
+                <div>text 3</div>
+            </div>
+            <div class="item">
+                <div>text 4</div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <button class="btn">
+            <span></span>
+            <span>Ok xdgf hgh</span>
+        </button>
+    </div>
+</body>
+
+</html>

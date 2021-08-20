@@ -1,0 +1,31 @@
+%form-elem {
+    border: $default-border;
+    border-radius: $default-border-radius;
+    padding: 0 20px;
+    width: 100%;
+}
+
+$btn-width: 40px;
+
+.input {
+    @extend %form-elem;
+    height: 50px;
+}
+
+.textarea {
+    @extend %form-elem;
+    min-height: 164px;
+    padding: 20px;
+    border-right: none;
+    border-radius: $default-border-radius 0 0 $default-border-radius;
+    resize: none;
+}
+
+.form-group {
+    button {
+        width: $btn-width;
+        background-color: #2ec06c;
+        border: none;
+        border-radius: 0 $default-border-radius $default-border-radius 0;
+    }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        .modal-fon {
+            background-color: rgba(0, 0, 0, .75);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            display: none;
+            z-index: 1;
+        }
+
+        .modal-open-btn:checked+.modal-fon {
+            display: block;
+        }
+
+
+        .modal-window {
+            position: absolute;
+            background-color: white;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            padding: 10px 0;
+            max-width: 500px;
+            width: calc(100% - 20px);
+        }
+
+        .modal-title {
+            border-bottom: 1px solid gray;
+            padding: 0 10px 5px;
+        }
+
+        .modal-content {
+            padding: 5px 10px;
+            border-bottom: 1px solid gray;
+        }
+
+        .modal-footer {
+            padding: 5px 10px 0;
+            text-align: right;
+        }
+
+        .modal-footer button {
+            font-size: 11px;
+            border-radius: 5px;
+            border: none;
+            background-color: red;
+            color: white;
+            transition: background-color .5s ease-in-out;
+        }
+
+        .modal-footer button:hover {
+            background-color: darkred;
+        }
+
+        .modal-footer button label {
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .s,
+        .c {
+            position: fixed;
+            right: 0;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+        }
+
+        .s {
+            top: 0;
+        }
+
+        .c {
+            bottom: 0;
+            border-radius: 50%;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .dog {
+            width: 150px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .dog img {
+            display: block;
+        }
+
+        .dog::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .55);
+            opacity: 0;
+            transition: opacity .5s ease-in-out;
+        }
+
+        .dog:hover::after {
+            opacity: 1;
+        }
+
+        .dog h3 {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            z-index: 10;
+            transform: translateY(170%);
+            transition: transform .5s ease-in-out;
+        }
+
+        .dog:hover h3 {
+            transform: translateY(0);
+        }
+
+        .dog h3::after {
+            content: '';
+            width: 100%;
+            height: 5px;
+            background-color: red;
+            display: block;
+            transform: translateX(-100%);
+            transition: transform .5s ease-in-out .5s;
+        }
+
+        .dog:hover h3::after {
+            transform: translateX(0);
+        }
+
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" class="modal-open-btn" id="modalOpen">
+    <div class="modal-fon">
+        <div class="modal-window">
+            <h2 class="modal-title">Title</h2>
+            <p class="modal-content">cont xfgh d dsh hdf hdf hjdf gjdffg vb n cfndf hdf hjdrfent dfjgh gh;dhfjsg;ols
+                hgh;k</p>
+            <div class="modal-footer">
+                <button>
+                    <label for="modalOpen">Закрыть</label>
+                </button>
+            </div>
+        </div>
+    </div>
+    <p>sdfdsfdsfsd</p>
+    <div class="s"></div>
+    <div class="c"></div>
+    <div class="dog">
+        <img src="images/01.jpg" alt="">
+        <h3>gfdfkjsdhzfjs</h3>
+    </div>
+</body>
+
+</html>

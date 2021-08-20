@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 400px;
+        }
+
+        .add-user {
+            display: flex;
+            width: 100%;
+        }
+
+        .add-user__input {
+            margin-right: 15px;
+            flex-grow: 1;
+            width: calc(100% / 2 - 130px);
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 5px;
+            width: 50px;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <div class="container">
+        <form action="" class="add-user">
+            <input placeholder="name" class="add-user__input" type="text" name="name">
+            <input placeholder="email" class="add-user__input" type="text" name="email">
+            <button class="add-user__btn btn" type="submit">add</button>
+        </form>
+    </div>
+
+    <script>
+        document.cookie = 'user1=' + encodeURIComponent('Te st');
+        document.cookie = 'user3=Test22';
+        let data = new Date(Date.now() + 86400e3);
+        data = data.toUTCString();
+        console.log(data);
+        document.cookie = 'user4=Kolobok677; path=/; domain=127.0.0.1; expires=' + data;
+        document.cookie = 'user5=Petya;'
+        document.cookie = 'user5=Petya; max-age=-1';
+        console.log(decodeURIComponent(document.cookie));
+
+        function getCookie(name) {
+            const cookies = decodeURIComponent(document.cookie);
+
+            const cookieList = Object.fromEntries(cookies.split(';').map(item => {
+                return item.trim().split('=');
+            }));
+
+            return cookieList[name];
+        }
+
+        function setCookie(name, value, options) {
+            if (!name || value === undefined) return;
+
+            let cookie = `${name}=${encodeURIComponent(value)}`;
+
+            if (options) {
+                for (let key in options) {
+                    let value = options[key];
+                    if (key === 'expires' && value instanceof Date) {
+                        value = value.toUTCString();
+                    }
+                    cookie = cookie + `; ${key}=${value}`;
+                }
+            }
+
+            document.cookie = cookie;
+        }
+
+        function removeCookie(name) {
+            setCookie(name, '', {
+                'max-age': -1,
+            })
+        }
+
+        //setCookie('test', 'dddd');
+
+        removeCookie('test');
+        // const users = [
+        //     {
+        //         name: 'Viktor',
+        //         email: 'rtest@sfn.dfc'
+        //     },
+        //     {
+        //         name: 'Petya',
+        //         email: 'dfgdf@sfn.dfc'
+        //     },
+        //     {
+        //         name: 'Vanya',
+        //         email: 'ghyhyhh@sfn.dfc'
+        //     }
+        // ];
+        const users = getUsers();
+
+        renderUserList(users);
+
+        const formAddUser = document.querySelector('.add-user');
+
+        formAddUser.addEventListener('submit', addUser);
+
+        function addUser(e) {
+            e.preventDefault()
+            const { target } = e;
+            const name = target[0].value;
+            const email = target[1].value;
+
+            users.push({
+                name: name,
+                email: email
+            });
+            renderUserList(users);
+            saveUser(users)
+        }
+
+        function saveUser(userList) {
+            localStorage.setItem('users', JSON.stringify(userList));
+        }
+
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('users')) || [];
+        }
+
+        function renderUserList(usersList) {
+            let usersHtml = '<ul>';
+
+            usersList.forEach(element => {
+                usersHtml = usersHtml + `<li>${element.name}: ${element.email};</li>`
+            });
+
+            usersHtml += '</ul>';
+
+            console.log(usersHtml);
+            document.getElementById('app').innerHTML = usersHtml;
+        }
+
+        // if (getCookie('timer')) {
+        //     console.log(JSON.parse(localStorage.getItem('users')));
+        // } else {
+
+        //     localStorage.setItem('users', JSON.stringify(users));
+        //     setCookie('timer', 'true', {
+        //         'max-age': 5
+        //     });
+        //     console.log('dd')
+        // }
+
+        //localStorage.clear();
+
+        //console.log(localStorage.key(0), localStorage.length)
+    </script>
+</body>
+
+</html>

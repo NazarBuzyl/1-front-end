@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        const user = {
+            name: "Viktor",
+            login: "user",
+            pass: {
+                isAccses: true,
+                passVal: 12345
+            },
+            getUserInfo: getUserInfo,
+            setUserName: setUserName,
+        };
+
+        const user1 = {
+            name: "Vasya",
+            login: "user1",
+            pass: "qwerty1",
+            getUserInfo: getUserInfo,
+            setUserName: setUserName,
+        };
+
+        const user2 = user1;
+
+        user2.name = 'ggggggg';
+        user1.name = 'aaaaaaa';
+
+        console.log(user1 === user2);
+
+        // for (let key in user1) {
+        //     if (typeof user1[key] !== 'function') {
+        //         console.log(`Key: ${key}, value: ${user1[key]}`);
+        //     }
+        // }
+
+        const newObj = {};
+        newObj.ggg = 'sdfd';
+        newObj.other = 'sdfgdfs';
+
+        for (let key in user) {
+            if (typeof user[key] !== 'function') {
+                newObj[key] = user[key];
+            }
+        }
+
+        console.log(Math.PI)
+
+        newObj.name = "GGGGGGGGGGGGGGGGGGG";
+        newObj.pass.isAccses = false;
+
+        console.log(newObj, user);
+
+        const numder = {
+            '5': 'dfdf',
+            '10': 'drfer',
+            '0': 5564,
+            '4': 'dfsdfg',
+            '9': 'dfd',
+        }
+
+        // for (let key in numder) {
+
+        //     console.log(`Key: ${key}, value: ${numder[key]}`);
+
+        // }
+
+        // console.log(numder)
+
+        function getUserInfo() {
+            return `User name: ${this.name}, user login: ${this.login}, user pass: ${this.pass}`;
+        }
+
+        function setUserName(value) {
+            if (!value) return;
+
+            console.log(this);
+
+            this.name = value;
+
+            return this;
+        }
+
+        // setUserName.call(user1, 'qqqqq');
+        // const newFun = setUserName.bind(user);
+
+        // setTimeout(function () {
+        //     newFun('sssssss');
+        // }, 2000);
+
+
+        //console.log(user.name, user.setUserName("Vasya"), user.name);
+        //console.log(user1.name, user1.setUserName("Petya"), user1.name);
+
+        //console.log(user.name, user['login']);
+
+
+        const randomNum = {
+            num: 0,
+            max: 100,
+            min: 0,
+            setNum: function (number) {
+                if (!this.validateNum(number)) return;
+
+                this.num = number;
+            },
+            validateNum: function (number) {
+                return number !== null && !isNaN(+number) && (number > this.min && number < this.max);
+            },
+            getNumber: function () {
+                let num1 = this.min;
+                let num2 = this.max;
+                let tmpNum = 0;
+                let answ = ''
+                let isBreak = false;
+
+                while (true) {
+                    tmpNum = ~~((num1 + num2) / 2);
+                    answ = prompt(`Ваше число ${tmpNum} да ==, больше: >, меньше: <`, '');
+
+                    switch (answ) {
+                        case '==':
+                            isBreak = true;
+                            break;
+                        case '>':
+                            num1 = tmpNum;
+                            break;
+                        case '<':
+                            num2 = tmpNum;
+                            break;
+                    }
+
+                    if (isBreak) break;
+
+                }
+            },
+        }
+
+        randomNum.setNum(prompt("Введите число от 1 до 100"));
+        randomNum.getNumber();
+    </script>
+</body>
+
+</html>

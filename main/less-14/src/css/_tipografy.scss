@@ -1,0 +1,27 @@
+.page {
+    font-family: $font-dafault;
+    font-size: $default-font-size;
+    line-height: 1.4;
+    background: url(../image/bg.jpg) center/cover no-repeat;
+
+    &__header {
+        margin-bottom: 24px;
+    }
+}
+
+.container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: $default-gap;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$default-gap);
+}
+
+.col {
+    width: 50%;
+    padding: $default-gap;
+}

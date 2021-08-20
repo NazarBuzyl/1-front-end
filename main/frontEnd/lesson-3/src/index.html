@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page">
+    <div id="cart">
+        <div class="cart-list">
+            <h3>Корзина: ({{ getCountProduct }})</h3>
+            <div class="cart__item cart-product" v-for="(product, index) in cartList" :key="product.id">
+                <img class="cart-product__img" :src="pathImageFolder + product.img" :alt="product.name">
+                <strong>{{ product.name }}</strong>
+                <p :class="{sale: product.price !== product.specialPrice}">
+                    Цена: <span>{{ product.price.toLocaleString() }} {{ currensySymbol }}</span>
+                    <span v-if="product.price !== product.specialPrice">
+                        {{ product.specialPrice.toLocaleString() }} {{ currensySymbol }}
+                    </span>
+                </p>
+                <div>
+                    <button @click="setQtyProduct(product, false)">-</button>
+                    <input type="text" v-model="product.qty">
+                    <button @click="setQtyProduct(product, true)">+</button>
+                    <button @click="removeProduct(index)">Удалить</button>
+                </div>
+                <p>Всего: {{ (product.specialPrice * product.qty).toLocaleString() }} {{ currensySymbol }}</p>
+            </div>
+            <div class="cart-total" v-if="getTotalPrice !== 0">
+                Стоимость покупки: {{ getTotalPrice }} {{ currensySymbol }}
+            </div>
+        </div>
+    </div>
+    <div id="catalog">
+        <div class="product-list">
+            <div class="product-list__item product" v-for="product in products" :key="product.id"
+                :class="{'out-of-stock': !product.instock}">
+                <img class="product__image" :src="pathImageFolder + product.img" :alt="product.name"
+                    :title="product.name">
+                <h2 class="product__title">
+                    {{ product.name }}
+                    <span class="product__sku">{{ product.sku }}</span>
+                </h2>
+                <p class="product__price-box">
+                    <span class="product__price" v-if="product.price === product.specialPrice">
+                        Цена: {{ product.price.toLocaleString() }} {{ currensySymbol }}
+                    </span>
+                    <span v-else class="product__price product__price_special">
+                        Старая цена: <span>{{ product.price.toLocaleString() }} {{ currensySymbol }}</span>
+                        <br>Новая цена: {{ product.specialPrice.toLocaleString() }} {{ currensySymbol }}
+                    </span>
+                </p>
+                <p><strong>Характеристики:</strong></p>
+                <ul class="product__characteristics ">
+                    <li v-for="(value, key) in product.characteristics">
+                        <strong>{{ key }}</strong>: {{ value }}
+                    </li>
+                </ul>
+                <div class="product__labels">
+                    <span v-for="(label, key) in product.labels" :class="key">{{ label }}</span>
+                    <span v-if="product.price !== product.specialPrice">Sale</span>
+                </div>
+                <div v-if="product.instock">
+                    <button @click="addToCart(product)" class="product__btn btn">Добавить в корзину</button>
+                </div>
+                <div v-else class="product__out-of-stock">{{ outOfStockMessage }}</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

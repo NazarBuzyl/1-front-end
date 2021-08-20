@@ -1,0 +1,17 @@
+.cart-list {}
+
+.cart {
+    &__item {
+        border-bottom: 1px solid gray;
+        padding: 15px;
+    }
+}
+
+.cart-product {
+    &__img {
+        width: 150px;
+        float: left;
+        display: inline-block;
+        margin-right: 15px;
+    }
+}

@@ -1,0 +1,7 @@
+@include fonts($font-secondary-name, $font-secondary-path, 300);
+
+@include fonts($font-secondary-name, '../fonts/roboto-v20-latin-regular');
+
+@include fonts($font-secondary-name, '../fonts/roboto-v20-latin-700', 700);
+
+@include fonts($font-default-name, '../fonts/roboto-condensed-v19-latin-regular');

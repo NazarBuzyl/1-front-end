@@ -1,0 +1,38 @@
+$alto: #ddd;
+$green: green;
+$chambray:#3b5998;
+$color-white: white;
+$grey: #bababa;
+
+$input-border-color: $grey;
+$default-border-radius: 5px;
+
+$facebook-color: $chambray;
+
+$default-border: 1px solid $input-border-color;
+
+$container-width: 1200px;
+$default-gap: 15px;
+
+$body-bg-color: $green;
+$border-color: $alto;
+
+$font-default-name: 'Roboto Condensed';
+$font-secondary-name: 'Roboto';
+$font-secondary-path: '../fonts/roboto-v20-latin-300';
+
+$follback: Arial,
+Helvetica,
+sans-serif;
+
+$font-dafault: $font-default-name,
+$follback;
+$font-secondary: $font-secondary-name,
+$follback;
+
+$default-font-size: 12px;
+
+$breack-points: ("xl": 1200px,
+    "lg": 992px,
+    "md": 768px,
+    "sm": 576px);

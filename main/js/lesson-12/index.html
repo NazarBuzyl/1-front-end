@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .popup,
+        .overley {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+        }
+
+        .popup.active,
+        .popup.active .overley {
+            display: block;
+        }
+
+        .overley {
+            background-color: rgba(0, 0, 0, .75);
+        }
+
+        .window {
+            width: 350px;
+            padding: 15px;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .window>div:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .window input {
+            display: inline-block;
+            width: 100%;
+            height: 35px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .a,
+        .b,
+        .c {
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">1</div>
+        </div>
+    </div>
+    <a id="link" href="https://developer.mozilla.org/ru/docs/Web/API/HTMLOrForeignElement/dataset">sdfgs</a>
+    <script>
+        const link = document.getElementById('link');
+        link.addEventListener('click', e => {
+            e.preventDefault();
+        });
+        console.log(link);
+
+        const divElem = document.querySelectorAll('.a, .b, .c');
+        divElem.forEach((elem, index) => {
+            if (!index) {
+                elem.addEventListener('click', function (event) {
+                    event.stopImmediatePropagation();
+                    console.log('aaaa', this, event.target, event.currentTarget);
+                }, true);
+            }
+            elem.addEventListener('click', function (event) {
+                console.log('fffff', this, event.target, event.currentTarget);
+            });
+
+        });
+        console.log(divElem);
+    </script>
+
+    <div id="app"></div>
+    <div class="popup">
+        <div class="overley"></div>
+        <div class="window">
+            <div><input type="text" id="name"></div>
+            <div><input type="text" id="time"></div>
+            <div><button id="popupBtn" type="button">Add</button></div>
+        </div>
+    </div>
+    <script>
+        const app = document.getElementById('app');
+
+        function createElem(options) {
+            if (!options || !options.tagName) return;
+            const tag = document.createElement(options.tagName);
+
+            addClass(tag, options.classList);
+
+            addAtributes(tag, options.atributes);
+
+            addContent(tag, options.content);
+
+            if (options.events) addEvents(tag, options.events)
+
+            return tag;
+        }
+
+        function addEvents(node, events) {
+            if (!node || !events) return;
+
+            node.addEventListener(events.eventName, events.handler);
+        }
+
+        function addContent(node, content) {
+            if (!content) return;
+
+            if (typeof content === 'string') {
+                node.textContent = content;
+            } else if (content.nodeType === 1) {
+                node.append(content);
+            } else if (Array.isArray(content)) {
+                content.forEach(element => {
+                    addContent(node, element);
+                });
+            }
+        }
+
+        function addClass(node, classList) {
+            if (!node || !classList) return;
+
+            node.classList.add(...classList.split(' '));
+        }
+
+
+        function addAtributes(node, options) {
+            if (!options || !node) return;
+
+            for (let key in options) {
+                node.setAttribute(key, options[key]);
+            }
+        }
+
+        //app.remove();
+
+        // Вставка и удаление:
+        // node.append(...nodes or strings) – вставляет в node в конец,
+        // node.prepend(...nodes or strings) – вставляет в node в начало,
+        // node.before(...nodes or strings) – вставляет прямо перед node,
+        // node.after(...nodes or strings) – вставляет сразу после node,
+        // node.replaceWith(...nodes or strings) – заменяет node.
+        // node.remove() – удаляет node.
+
+        (function () {
+            function ToDo(options) {
+                this.taskList = [];
+                this.inite(options);
+            }
+
+            ToDo.prototype.inite = function (options) {
+                const self = this;
+                this.defaultClass = options.defaultClass || 'to-do';
+                const defaultClass = this.defaultClass;
+
+                this.$element = document.querySelector(options.parentSelector);
+                this.$popupElement = document.querySelector(options.popupSelector);
+
+
+                addEvents(this.$popupElement.querySelector('#popupBtn'), {
+                    eventName: 'click',
+                    handler: this.validatePopupData.bind(this)
+                });
+
+                this.$taskListElement = createElem({
+                    tagName: 'ul',
+                    classList: `${defaultClass}__list`,
+                });
+
+                this.$taskListElement.addEventListener('click', this.removeTask.bind(this));
+
+                const divAction = createElem({
+                    tagName: 'div',
+                    classList: `${defaultClass}__control`,
+                    content: createElem({
+                        tagName: 'button',
+                        classList: `${defaultClass}__add btn`,
+                        atributes: {
+                            type: 'button'
+                        },
+                        content: 'Add',
+                        events: {
+                            eventName: 'click',
+                            handler: self.openPopup.bind(self),
+                        }
+                    }),
+                });
+
+                addClass(this.$element, defaultClass);
+                this.$element.append(this.$taskListElement, divAction);
+            }
+
+            ToDo.prototype.validatePopupData = function () {
+                const taskNameElem = this.$popupElement.querySelector('#name');
+                const taskTimeElem = this.$popupElement.querySelector('#time');
+                const taskName = taskNameElem.value;
+                const taskTime = taskTimeElem.value;
+
+                if (!taskName || !taskTime) {
+                    alert('Вы не ввели данные');
+                } else {
+                    this.addTask({
+                        name: taskName,
+                        date: taskTime,
+                    });
+
+                    taskNameElem.value = '';
+                    taskTimeElem.value = '';
+                    this.closePopup();
+                }
+                console.log(taskName, taskTime)
+            };
+
+            ToDo.prototype.openPopup = function () {
+                this.$popupElement.classList.add('active');
+            };
+
+            ToDo.prototype.closePopup = function () {
+                this.$popupElement.classList.remove('active');
+            };
+
+            ToDo.prototype.addTask = function (options) {
+                if (!options) return;
+
+                const task = new this.Task(options);
+                this.taskList.push(task);
+                this.addTaskElement(task);
+            };
+
+            ToDo.prototype.addTaskElement = function (task) {
+                console.log(task.name, task.date);
+                const taskElement = createElem({
+                    tagName: 'li',
+                    classList: `${this.defaultClass}__item`,
+                    content: [
+                        createElem({
+                            tagName: 'span',
+                            classList: `${this.defaultClass}__name`,
+                            content: task.name
+                        }),
+                        createElem({
+                            tagName: 'span',
+                            classList: `${this.defaultClass}__time`,
+                            content: task.date
+                        }),
+                        createElem({
+                            tagName: 'span',
+                            classList: `${this.defaultClass}__action`,
+                            content: createElem({
+                                tagName: 'button',
+                                classList: `${this.defaultClass}__remove btn`,
+                                atributes: {
+                                    type: 'button',
+                                    'data-id': task.id
+                                },
+                                content: createElem({
+                                    tagName: 'span',
+                                    content: 'Удалить'
+                                })
+                            })
+                        })
+                    ]
+                });
+                console.log(taskElement)
+                this.$taskListElement.append(taskElement);
+            };
+
+            function findBtnElem(event) {
+                return event.path.find(elem => {
+                    return elem.dataset && elem.dataset.id !== undefined;
+                });
+            }
+
+            ToDo.prototype.removeTask = function (event) {
+                const elem = findBtnElem(event);
+
+                if (!elem) return;
+
+                const taskId = +elem.dataset.id;
+
+                if (taskId === undefined) return;
+
+                const indexTask = this.findTaskIndex(taskId);
+
+                if (indexTask === -1) return;
+
+                this.taskList.splice(indexTask, 1);
+                this.removeTaskElem(elem);
+            };
+
+            ToDo.prototype.removeTaskElem = function (btnElem) {
+                if (!btnElem) return;
+
+                //btnElem.closest(`.${this.defaultClass}__item`).remove();
+                const elem = btnElem.closest(`.${this.defaultClass}__item`);
+                elem.parentElement.removeChild(elem);
+            };
+
+            ToDo.prototype.findTaskIndex = function (taskId) {
+                return this.taskList.map(task => task.id).indexOf(taskId);
+            };
+
+            ToDo.prototype.Task = getConstructorTask();
+
+            function getConstructorTask() {
+                let count = 0;
+
+                function Task(options) {
+                    this.id = count++;
+                    this.name = options.name;
+                    this.status = false;
+                    this.date = options.date;
+                }
+
+                Task.prototype.info = function () {
+                    console.log(`
+                    Task name: ${this.name}.\n
+                    Status: ${this.status}.\n
+                    Date: ${this.date}.\n
+                    `)
+                }
+
+                Task.prototype.statusChange = function () {
+                    this.status = !this.status;
+                }
+
+                Task.prototype.dedline = function () {
+
+                }
+
+                return Task;
+            }
+
+            const toDoFirst = new ToDo({
+                parentSelector: '#app',
+                popupSelector: '.popup'
+            });
+
+            toDoFirst.addTask({
+                name: 'Go to the home.',
+                date: '20.06.2021',
+            });
+
+            toDoFirst.addTask({
+                name: 'Go to the shop.',
+                date: '25.06.2021',
+            });
+
+            toDoFirst.addTask({
+                name: 'New task 1111.',
+                date: '25.07.2021',
+            });
+
+            console.log(toDoFirst);
+        })();
+    </script>
+</body>
+
+</html>

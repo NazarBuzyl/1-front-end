@@ -1,0 +1,28 @@
+.close {
+    width: 17px;
+    height: 17px;
+
+    &:hover {
+        box-shadow: 0 0 2px 1px gray;
+    }
+
+    &::before,
+    &::after {
+        display: block;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #dbdbdb;
+        position: absolute;
+        top: 50%;
+        left: 0;
+    }
+
+    &::before {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &::after {
+        transform: translateY(-50%) rotate(45deg);
+    }
+}

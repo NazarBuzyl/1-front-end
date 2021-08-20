@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = [
+            {
+                user: "Kolya",
+                id: 0
+            },
+            {
+                user: "Valsya",
+                id: 1
+            },
+            {
+                user: "Viktor",
+                id: 2
+            },
+            {
+                user: "Kolya",
+                id: 3
+            },
+        ];
+
+        // for (let i = 0; i < a.length; i++) {
+        //     ++a[i];
+        // }
+
+        // a.forEach(function (item, index) {
+
+        // });
+
+        // console.log(a.slice(), a.concat(['a', 'd'], ['dsf']), a);
+
+        // console.log(a.indexOf(5));
+
+        console.log(a.find(function (item, index, arr) {
+            return item.user === "Valsya";
+        }), a);
+
+        console.log(a.filter(function (item, index, arr) {
+            console.log(item.user === "Kolya", item.user)
+            return item.user === "Kolya";
+        }));
+
+        console.log(a.map(function (item, index, arr) {
+            return [item.id, item.user];
+        }));
+
+        const b = [1, 13, 22, 15, 10, 20, 5, 4, 31, 2, 1, 3, 2, 4, 6, 8, 4, 3, 6, 5, 1, 3, 5, 4, 3, 8, 7, 4, 5, 3, 4, 1];
+
+        console.log(b.sort(function (a, b) {
+            return a - b;
+        }));
+
+        let skillList = "HTML, CSS, JS, GIT";
+        const ss = skillList.split(', ');
+        ss.splice(ss.indexOf("GIT") + 1, 0, "NodeJs");
+        //ss.push('NodeJS');
+        console.log(ss.join(', '));
+
+        const user = {
+            name: "Yuliya",
+            lastName: "Kisilyova",
+            year: 28,
+            city: "Kyiv",
+            job: "Finance",
+            skillList: "HTML, CSS, JS, GIT",
+            pass: "qwerty",
+        };
+
+        const user1 = {
+            name: "Yuliya",
+            lastName: "Kisilyova",
+            year: 28,
+            city: "Kyiv",
+            job: "Finance",
+            skillList: "Photoshop, Norepad, Excel, SAP",
+            pass: "qwerty",
+        };
+
+        function removeSkill(skillName) {
+            if (!skillName) return;
+
+            /* const skillList = this.skillList.split(", ");
+             const removeIndex = skillList.indexOf(skillName);
+             if (removeIndex === -1) return;
+             skillList.splice(removeIndex, 1);
+             this.skillList = skillList.join(", ");*/
+
+            findArray.call(this, skillName)
+        }
+
+        function addSkillList(skillName) {
+            if (!skillName) return;
+
+            if (Array.isArray(this.skillList)) {
+                this.skillList.push(skillName)
+            } else {
+                this.skillList = this.skillList + ", " + skillName;
+            }
+        }
+
+        function replaceSkillList(skillName, newSkillName) {
+            if (!skillName && !newSkillName) return;
+
+            findArray.call(this, skillName, newSkillName);
+            /* const skillList = this.skillList.split(", ");
+            const removeIndex = skillList.indexOf(skillName);
+            if (removeIndex === -1) return;
+            skillList.splice(removeIndex, 1, newSkillName);
+            this.skillList = skillList.join(", ");*/
+        }
+
+        function findArray(skillName, newSkillName) {
+            const skillList = this.skillList.split(", ");
+            const removeIndex = skillList.indexOf(skillName);
+
+            if (removeIndex === -1) return;
+
+            if (newSkillName === undefined) {
+                skillList.splice(removeIndex, 1);
+            } else {
+                skillList.splice(removeIndex, 1, newSkillName);
+            }
+
+            this.skillList = skillList.join(", ");
+        }
+
+        addSkillList.call(user, "JavaScript");
+        removeSkill.call(user, "JS");
+        removeSkill.call(user, "GIT");
+        replaceSkillList.call(user1, "Norepad", "XML");
+
+        console.log(user1);
+    </script>
+</body>
+
+</html>

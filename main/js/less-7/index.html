@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 2, 42, 3, 4, 2, 3];
+        const arr1 = [];
+        arr[arr.length - 1] = 99;
+
+        console.log(arr[arr.length - 1], arr.length, arr);
+
+        for (let i = 0; i < arr.length; i++) {
+            arr1.push(arr[i] + 1);
+        }
+
+        arr1.pop();
+
+        arr1.shift();
+        arr1.unshift(111)
+
+        console.log(arr1, arr);
+
+        arr1.forEach(function (item, index) {
+            console.log(`Item: ${item}, Index: ${index}`);
+        });
+
+        console.log(arr1[5]);
+        arr1.splice(5, 1, 1);
+        console.log(arr1[5]);
+
+    </script>
+</body>
+
+</html>

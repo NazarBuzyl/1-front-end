@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function couner() {
+            let counter = 0;
+
+            return function () {
+                return ++counter;
+            }
+        }
+
+        const counter1 = couner();
+        const counter2 = couner();
+
+        console.log(counter1());
+        console.log(counter1());
+        console.log(counter1());
+        console.log(counter1());
+        console.log('=====================')
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+        console.log(counter2());
+
+        function messager(name) {
+
+            return function (message) {
+                return message + name;
+            }
+        }
+
+        const m1 = messager("Vasya");
+        console.log(m1('Privet '));
+        console.log(m1('Hello '));
+        console.log(m1('Poka '));
+
+        function messager1(name, fn) {
+            return fn(name);
+        }
+        const m = messager1('Petya', function (a) {
+            return a.toLocaleUpperCase();
+        });
+
+        function tabl(num, validator1, valid1, error) {
+            if (validator1(num)) valid1(num);
+            else error(num);
+        }
+
+        tabl(9, validator, valid, invalid);
+        tabl(90, validator, valid, invalid);
+
+        function validator(data) {
+            return data >= 1 && data <= 9;
+        }
+
+        function valid(data) {
+            console.log("Ura:" + data);
+        }
+
+        function invalid(data) {
+            console.log("Beda: " + data);
+            console.log('Ожидалось 1-9');
+        }
+
+        function toLocaleLower(a) {
+            return a.toLocaleLowerCase();
+        }
+
+        function factorial(n) {
+
+            if (n === 1) {
+                return 1
+            } else {
+
+                const rezult = n * factorial(n - 1);
+
+                return rezult;
+            }
+        }
+
+        console.log(factorial(5));
+
+    </script>
+</body>
+
+</html>

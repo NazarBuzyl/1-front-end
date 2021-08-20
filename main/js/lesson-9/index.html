@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // (function () {
+        //     let a;
+        //     let b;
+
+        //     function bar(a, f, g, h) {
+        //         if (!a) return false;
+        //         //b = a; //плохо
+        //         return a + f * g / h;
+        //     }
+
+        //     window.bar = bar;
+
+        //     const d = bar(prompt(), 23, 4, 5);
+        //     const v = bar(5, 4, 24, 77);
+        //     console.log(b);
+        // })();
+
+        (function () {
+            const animal = {
+                name: 'Bog',
+                age: 2,
+                say: function () {
+                    console.log(`My name is ${this.name}, am ${this.age}`);
+                }
+            }
+
+            function Animal(options) {
+                this.name = options.name;
+                this.age = options.age;
+            }
+
+            Animal.prototype.say = function () {
+                console.log(`My name is ${this.name}, am ${this.age}`);
+            }
+
+            //console.log(animal.say())
+
+            const bog = new Animal({
+                name: 'Tuzik',
+                age: 10
+            });
+
+            const bog1 = new Animal({
+                name: 'Bobik',
+                age: 5
+            });
+
+            bog.name = "new dog name";
+
+            console.log(bog, bog1);
+        })();
+
+
+        (function () {
+            function ToDo(options) {
+                this.taskList = [];
+            }
+
+            ToDo.prototype.addTask = function (options) {
+                if (!options) return;
+
+                const task = new this.Task(options);
+                this.taskList.push(task);
+            };
+
+            ToDo.prototype.removeTask = function (taskId) {
+                const indexTask = this.findTaskIndex(taskId);
+
+                if (indexTask === -1) return;
+
+                return this.taskList.splice(indexTask, 1);
+            }
+
+            ToDo.prototype.findTaskIndex = function (taskId) {
+                return this.taskList.map(task => task.id).indexOf(taskId);
+            }
+
+            ToDo.prototype.Task = getConstructorTask();
+
+            function getConstructorTask() {
+                let count = 0;
+
+                function Task(options) {
+                    this.id = count++;
+                    this.name = options.name;
+                    this.status = false;
+                    this.date = options.date;
+                }
+
+                Task.prototype.info = function () {
+                    console.log(`
+                    Task name: ${this.name}.\n
+                    Status: ${this.status}.\n
+                    Date: ${this.date}.\n
+                    `)
+                }
+
+                Task.prototype.statusChange = function () {
+                    this.status = !this.status;
+                }
+
+                Task.prototype.dedline = function () {
+
+                }
+
+                return Task;
+            }
+
+            const toDoFirst = new ToDo();
+
+            toDoFirst.addTask({
+                name: 'Go to the home.',
+                date: '20.06.2021',
+            });
+
+            toDoFirst.addTask({
+                name: 'Go to the shop.',
+                date: '25.06.2021',
+            });
+
+            toDoFirst.removeTask(5);
+
+            console.log(toDoFirst);
+        })();
+
+
+    </script>
+</body>
+
+</html>

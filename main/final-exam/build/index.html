@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBD</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="page">
+    <header class="header">
+        <div class="header__container">
+            <nav class="menu header__menu">
+                <a href="#" class="menu__burger-btn"><span></span></a>
+                <ul class="menu__list">
+                    <li class="menu__item menu__item-login">
+                        <a href="#" class="menu__linck menu__linck-login">Login</a>
+                        <a href="#" class="menu__linck menu__linck-search">Search</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__linck">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#products" class="menu__linck">Products</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#faqs" class="menu__linck">FAQs</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#contact" class="menu__linck">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="logo header__logo">CBD</a>
+            <ul class="action header__action">
+                <li class="action__item login">
+                    <a class="action__login-linck" href="#">Login</a>
+                </li>
+                <li class="action__item action__search search search-js">
+                    <form action="#" class="search__form">
+                        <input aria-label="search" type="text" class="search__input search__input-js">
+                        <button class="search__btn" type="submit">Search</button>
+                    </form>
+                </li>
+                <li class="action__item cart" id="miniCart">
+                    <span class="cart__title">Cart</span>
+                    <span class="cart__item">1</span>
+                    <div class="cart__mini-cart mini-cart">
+                        <ul class="mini-cart__list">
+                            <li class="mini-cart__item">
+                                <img class="mini-cart__img" src="./images/products/1.jpg"
+                                    alt="Asus ROG Zephyrus Duo 15 GX550LXS-HC068R">
+                                <div class="mini-cart__product-info">
+                                    <h4 class="mini-cart__product-name">Asus ROG Zephyrus Duo 15 GX550LXS-HC068R</h4>
+                                    <p class="mini-cart__product-price-wrapper"><span
+                                            class="mini-cart__product-price">134999 USD</span> <span
+                                            class="mini-cart__product-summary-price">134999 USD</span></p>
+                                </div>
+                                <div class="mini-cart__qty-wrapper">
+                                    <a class="mini-cart__inc" href="#"></a>
+                                    <input class="mini-cart__qty" value="1" type="number" name="qty">
+                                    <a class="mini-cart__dec" href="#"></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mini-cart__summary-wrapper">
+                            <p class="mini-cart__summary">134999 USD</p>
+                        </div>
+                        <div class="mini-cart__action">
+                            <button class="btn btn_primary mini-cart__go-to-checkout">Proceed to Checkout</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main">
+        <section class="hero-block">
+            <div class="container hero-block__container">
+                <div class="row">
+                    <div class="col-12 hero-block__enhancing-life">
+                        <h1 class="hero-block__title">Enhancing Life Excelling in Care</h1>
+                        <p class="hero-block__subtitle">Choose Wisely. Choose CBD.</p>
+                        <p class="hero-block__lick-wrapper">
+                            <a class="hero-block__btn-linck btn btn_secondary" href="#">Start Shopping</a>
+                        </p>
+                        <p class="hero-block__text text"><a class="hero-block__linck" href="#">See all products</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="we-are-what">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="we-are-what__title" src="./images/we-are-what.png" alt="We are what we are">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 we-are-what__tabs tabs tabs-js">
+                        <ul class="tabs__control-list">
+                            <li class="tabs__item active">
+                                <a class="tabs__linck" href="#whatIsCbd">What is cbd?</a>
+                            </li>
+                            <li class="tabs__item">
+                                <a class="tabs__linck" href="#benefits">Benefits</a>
+                            </li>
+                            <li class="tabs__item">
+                                <a class="tabs__linck" href="#ourDifference">Our difference</a>
+                            </li>
+                        </ul>
+                        <div class="tabs__content">
+                            <div class="tabs__content-item active" data-tab="whatIsCbd">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 tabs__text">
+                                        <h3 class="title title_h3 tabs__title">What it is and how it works</h3>
+                                        <p class="text">CBD is short for cannabidiol. It is a phytocannabinoid found in
+                                            hemp and
+                                            known for supporting the body and mind in many ways.* Charlotte’s Web
+                                            products have cannabinoids with CBD extract.</p>
+                                        <p class="text">Not to be confused with oil from hemp seeds (which doesn’t
+                                            contain
+                                            cannabinoids), CBD comes from the flowers and leaves of the hemp plant.</p>
+                                        <p class="text">Why does CBD work? The human body has a vast network of
+                                            receptors, the
+                                            endocannabinoid system.</p>
+                                    </div>
+                                    <div class="col-12 col-md-6 tabs__img">
+                                        <img src="./images/tab/1.jpg" alt="">
+                                        <img src="./images/tab/2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__content-item" data-tab="benefits">
+                                <div class="row">
+                                    <div class="col-6 tabs__img">
+                                        <img src="./images/tab/1.jpg" alt="">
+                                        <img src="./images/tab/2.jpg" alt="">
+                                    </div>
+                                    <div class="col-6 tabs__text">
+                                        <h3 class="title title_h3 tabs__title">Benefits</h3>
+                                        <p class="text">CBD is short for cannabidiol. It is a phytocannabinoid found in
+                                            hemp and
+                                            known for supporting the body and mind in many ways.* Charlotte’s Web
+                                            products have cannabinoids with CBD extract.</p>
+                                        <p class="text">Not to be confused with oil from hemp seeds (which doesn’t
+                                            contain
+                                            cannabinoids), CBD comes from the flowers and leaves of the hemp plant.</p>
+                                        <p class="text">Why does CBD work? The human body has a vast network of
+                                            receptors, the
+                                            endocannabinoid system.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabs__content-item" data-tab="ourDifference">
+                                <div class="row">
+                                    <div class="col-6 tabs__text">
+                                        <h3 class="title title_h3 tabs__title">Our difference</h3>
+                                        <p class="text">CBD is short for cannabidiol. It is a phytocannabinoid found in
+                                            hemp and
+                                            known for supporting the body and mind in many ways.* Charlotte’s Web
+                                            products have cannabinoids with CBD extract.</p>
+                                        <p class="text">Not to be confused with oil from hemp seeds (which doesn’t
+                                            contain
+                                            cannabinoids), CBD comes from the flowers and leaves of the hemp plant.</p>
+                                        <p class="text">Why does CBD work? The human body has a vast network of
+                                            receptors, the
+                                            endocannabinoid system.</p>
+                                    </div>
+                                    <div class="col-6 tabs__img">
+                                        <img src="./images/tab/1.jpg" alt="">
+                                        <img src="./images/tab/2.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <div class="container-fluid product__container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="title">CBD Featured Products</h2>
+                        <div class="product__list row">
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ROG Zephyrus Duo 15 GX550LXS-HC068R
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/1.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">134 999 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ROG Zephyrus S17 GX701LXS-HG027T
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/2.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">96 999 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ROG Zephyrus S15 GX502LXS-HF098T
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/3.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">89 999 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ExpertBook B9400CEA-KC0178R
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/4.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">86 599 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ROG Strix SCAR 15 G533QS-HF078T
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/4.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">86 599 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                            <div class="product__item">
+                                <div class="raiting product__raiting">
+                                    <div class="raiting__control">
+                                        <a class="raiting__action" data-raiting="1" href="#"></a>
+                                        <a class="raiting__action" data-raiting="2" href="#"></a>
+                                        <a class="raiting__action" data-raiting="3" href="#"></a>
+                                        <a class="raiting__action" data-raiting="4" href="#"></a>
+                                        <a class="raiting__action" data-raiting="5" href="#"></a>
+                                    </div>
+                                    <div class="raiting__star"></div>
+                                    <div class="raiting__star-full"></div>
+                                </div>
+                                <h3 class="product__title">
+                                    Asus ROG Zephyrus S17 GX701LWS-HG121T
+                                </h3>
+                                <div class="product__image-wrapper">
+                                    <img class="product__image" src="./images/products/6.jpg" alt="">
+                                </div>
+                                <div class="product__action">
+                                    <div class="product__price">89 999 USD</div>
+                                    <button class="product__add-to-cart btn">Shop</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

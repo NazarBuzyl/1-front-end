@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: yellow;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+
+        .card {
+            width: 33.3333%;
+            padding: 10px;
+        }
+
+        .card:first-child {
+            width: 66.66666%;
+        }
+
+        .card:nth-child(2) .card__wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card:nth-child(2) .card__wrapper .img {
+            flex-grow: 1;
+        }
+
+        .img {
+            padding-top: 35%;
+            background-color: green;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__wrapper">
+                    <div class="img"></div>
+                    <h2 class="title">dklbgj d;sl 'ldfskgj ;l</h2>
+                    <p>Price: $200</p>
+                    <button type="button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

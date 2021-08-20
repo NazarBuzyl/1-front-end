@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            background-color: teal;
+        }
+
+        .button_gren {
+            background-color: green;
+        }
+
+        .button_red {
+            background-color: red;
+        }
+
+        .button_small {
+            padding: 5px;
+        }
+
+        .link-menu__text_text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu__item {
+            border-right: 1px solid gray;
+        }
+
+        .menu__link {
+            display: block;
+            padding: 10px 20px;
+        }
+
+        .menu__link:hover,
+        .menu__item_active {
+            background-color: lightgray;
+        }
+
+    </style>
+</head>
+
+<body class="page">
+    <a href="" class="link-menu page__link-menu">
+        <span class="link-menu__text">text menu</span>
+    </a>
+    <button class="button">Button</button>
+    <button class="button button_gren">Ok</button>
+    <button class="button button_gren button_small">Ok</button>
+    <button class="button button_red">Cansel</button>
+    <ul class="menu">
+        <li class="menu__item menu__item_active">
+            <a href="" class="menu__link link-menu">
+                <span class="link-menu__text link-menu__text_text-uppercase">text menu</span>
+            </a>
+        </li>
+        <li class="menu__item"><a href="" class="menu__link"><span class="menu__text">text menu</span></a></li>
+        <li class="menu__item"><a href="" class="menu__link"><span class="menu__text">text menu</span></a></li>
+        <li class="menu__item"><a href="" class="menu__link"><span class="menu__text">text menu</span></a></li>
+    </ul>
+    <ul class="menu-footer">
+        <li class="menu-footer__item">
+            <a href="" class="menu-footer__link link-menu">
+                <span class="link-menu__text">text menu</span>
+            </a>
+        </li>
+        <li class="menu-footer__item"><a href="" class="menu-footer__link"><span class="menu__text">text menu</span></a>
+        </li>
+        <li class="menu-footer__item"><a href="" class="menu-footer__link"><span class="menu__text">text menu</span></a>
+        </li>
+        <li class="menu-footer__item"><a href="" class="menu-footer__link"><span class="menu__text">text menu</span></a>
+        </li>
+    </ul>
+</body>
+
+</html>

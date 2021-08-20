@@ -1,0 +1,29 @@
+$color-white: white;
+$color-black: black;
+$grey: #e2e7ec;
+$grey1: #818181;
+
+$body-bg-color: $grey;
+$date-color: $grey1;
+
+$container-width: 1140px;
+$default-gap: 10px;
+
+$font-default-name: 'HansKendrick';
+$font-secondary-name: 'Ubuntu';
+
+$follback: Arial,
+Helvetica,
+sans-serif;
+
+$font-dafault: $font-default-name,
+$follback;
+$font-secondary: $font-secondary-name,
+$follback;
+
+$default-font-size: 13px;
+
+$breack-points: ("xl": 1200px,
+    "lg": 992px,
+    "md": 768px,
+    "sm": 576px);

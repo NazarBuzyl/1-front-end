@@ -1,0 +1,36 @@
+.social-list {
+    &__linck {
+        display: block;
+        padding-top: 100%;
+        border: 1px solid;
+        border-radius: 5px;
+        position: relative;
+        background-color: $color-white;
+
+        &_facebook {
+            border-color: $facebook-color;
+
+            svg {
+                fill: $facebook-color;
+            }
+
+            &:hover {
+                background-color: $facebook-color;
+
+                svg {
+                    fill: $color-white;
+                }
+            }
+        }
+
+        &_twitter {}
+
+        &_instagram {}
+
+        &_dribbble {}
+    }
+
+    &__img {
+        @include position-center;
+    }
+}

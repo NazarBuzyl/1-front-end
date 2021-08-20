@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header * {}
+
+        /* 10 */
+        .header {
+            color: red;
+        }
+
+        /* 1 */
+        header.header {
+            color: gray;
+        }
+
+        body header.header {
+            color: greenyellow;
+        }
+
+        /* 100 */
+        /* #header {
+            color: green;
+        } */
+
+        [type="text"] {
+            background-color: green;
+        }
+
+        main form {
+            background-color: red;
+        }
+
+        main label {}
+
+        footer form {
+            background-color: royalblue;
+        }
+
+        .main .form {}
+
+        main strong,
+        main p {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        main>p.test {
+            color: red;
+        }
+
+        main strong~p {
+            font-size: 50px;
+        }
+
+        main strong+p {
+            color: royalblue;
+        }
+
+        .form input+label {}
+
+        .form label {}
+
+        h1:hover+p>span {
+            background-color: firebrick;
+        }
+
+        input[type="checkbox"]:checked+label {
+            font-weight: 700;
+        }
+
+        input[type="checkbox"]:checked~*:not(p),
+        input[type="checkbox"]:checked~*:not(a) {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header"></header>
+
+    <main class="main">
+        <section>
+            <h1><strong>kasdhf</strong></h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, reprehenderit deserunt cupiditate
+                architecto
+                officia voluptatibus excepturi consectetur quibusdam, voluptatum iusto aut eaque, numquam deleniti
+                provident.
+                Voluptates, necessitatibus at! Voluptatem, iusto?
+            </p>
+            <p>sdgf<span>sdgfd</span>gfs</p>
+        </section>
+
+        <form action="" class="form">
+
+            <label for="rr">
+                <input type="checkbox" name="" id="rr">
+                <span>Name</span>
+            </label>
+            <input type="checkbox" name="" id="rr2">
+            <label for="rr2">Name</label>
+            <input type="checkbox" name="" id="rr3">
+            <label for="rr3">Name</label>
+            <input type="checkbox" name="" id="rr4">
+            <label for="rr4">Name</label>
+            <p class="test">dsgfsd</p>
+        </form>
+
+        <strong>dfgdrgf</strong>
+        <p>dsgfsd</p>
+        <div>
+            <p class="test">dsgfsd</p>
+        </div>
+        <p class="test"><span>d<span>s</span>g</span>fsd</p>
+    </main>
+
+    <footer>
+        <form action="">
+            <label>Name
+                <input type="text" name="">
+            </label>
+        </form>
+    </footer>
+</body>
+
+</html>

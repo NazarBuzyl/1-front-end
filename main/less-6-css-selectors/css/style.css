@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.list li:nth-child(2n+4) {
+    background-color: gray;
+}
+
+.list li:nth-last-child(-n+3) {
+    background-color: white;
+}
+
+.list li:nth-child(4n+5):active a {
+    color: red;
+}
+
+.list li:nth-child(4n):hover~li:nth-child(2n) {
+    background-color: red;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* .text h2:nth-of-type(2n) {
+    background-color: red;
+} */
+.text {
+    background-color: brown;
+}
+
+
+.cirkl {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+/* .text h2::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url(../images/icon-1.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
+    
+    margin-right: 15px;
+} */
+.list li::before {
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+}
+
+.list li:nth-child(4n):hover~li:nth-child(2n)::before {
+    background-color: black;
+}
+
+.text h2::after,
+.text h2::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+}

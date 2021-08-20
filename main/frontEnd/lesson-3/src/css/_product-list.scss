@@ -1,0 +1,15 @@
+.product-list {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__item {
+        width: 33.333%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+}

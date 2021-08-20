@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let name = 'Viktor';
+
+        function nameFuction(name, a, s, d, f) {
+            const dd = 'dd';
+            console.log('Privet ' + name);
+        }
+
+        nameFuction("Petya", 1, 4, 4, 5);
+
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function minus(a, b) {
+            return a - b;
+        }
+
+        function u(a, b) {
+            return a * b;
+        }
+
+        function d(a, b) {
+            return a / b;
+        }
+
+        function min(a, b) {
+            return a < b ? a : b;
+        }
+
+        function max(a, b) {
+            return a > b ? a : b;
+        }
+
+        function calc(num1, num2, operator = '+') {
+            if (num1 === undefined || num2 === undefined) {
+                return false;
+            }
+            operator = operator === undefined ? '+' : operator;
+            num1 = num1 === undefined ? 10 : num1;
+
+            if (operator === '+') return sum(num1, num2);
+            if (operator === '-') return minus(num1, num2);
+            if (operator === '*') return u(num1, num2);
+            if (operator === '/') return d(max(num1, num2), min(num1, num2));
+
+            // switch (operator) {
+            //     case '+':
+            //         return sum(num1, num2);
+            //     case '-':
+            //         return minus(num1, num2);
+            //     case '*':
+            //         return u(num1, num2);
+            //     case '/':
+            //         return d(num1, num2);
+            // }
+        }
+
+
+        const rez = sum(2, 3);
+        console.log(calc(5, 10, '/'));
+        console.log(calc(5, 5, '/'));
+        console.log(calc(0, 5));
+        console.error('sdfds');
+
+
+        function a() {
+            console.log(arguments);
+        }
+
+        a(1, 2, 3, 4, 5, 656);
+
+        const myFun = function (a, s, d, g) {
+            return a + s + d + g;
+        }
+
+        console.log(myFun(1, 1, 2, 6));
+
+    </script>
+</body>
+
+</html>

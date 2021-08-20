@@ -1,0 +1,19 @@
+.button {
+    min-width: 118px;
+    min-height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid;
+
+    &_primary {
+        background-color: #a200b8;
+        border-color: #a200b8;
+        color: white;
+    }
+
+    &_secondary {
+        background-color: white;
+        border-color: black;
+    }
+}

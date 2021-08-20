@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike BEM CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page">
+    <header class="header page__header">
+        <div class="container">
+            <nav class="navigation">
+                <div class="logo navigation__logo">
+                    <a href="#" class="logo__link">
+                        <img class="logo__image" src="image/logo.png" alt="Nike">
+                    </a>
+                </div>
+                <ul class="menu navigation__menu">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">LIFESTYLE</a>
+                    </li>
+                    <li class="menu__item menu__item_active">
+                        <a class="menu__link" href="#">RUNNING</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">FOOTBALL</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">SKATEBOARDING</a>
+                    </li>
+                </ul>
+                <button class="menu-burger-btn navigation__menu-burger-btn" type="button">
+                    <span class="menu-burger-btn__line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main class="main page__main">
+        <div class="container">
+            <section class="product-card">
+                <div class="product-card__slider">
+                    <div class="product-card__slider-list">
+                        <div class="product-card__slider-item">
+                            <img class="product-card__slider-image" src="image/01.png" alt="THE RUNNING HAS JUST BEGUN">
+                        </div>
+                    </div>
+                    <ul class="product-card__slider-navigation">
+                        <li class="product-card__slider-navigation-item">
+                            <a class="product-card__slider-navigation-link" href="#">
+                                <img class="product-card__slider-navigation-image" src="image/p1.jpg"
+                                    alt="THE RUNNING HAS JUST BEGUN">
+                            </a>
+                        </li>
+                        <li class="product-card__slider-navigation-item">
+                            <a class="product-card__slider-navigation-link" href="#">
+                                <img class="product-card__slider-navigation-image" src="image/p2.jpg"
+                                    alt="THE RUNNING HAS JUST BEGUN">
+                            </a>
+                        </li>
+                        <li class="product-card__slider-navigation-item">
+                            <a class="product-card__slider-navigation-link" href="#">
+                                <img class="product-card__slider-navigation-image" src="image/p3.jpg"
+                                    alt="THE RUNNING HAS JUST BEGUN">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="product-card__info">
+                    <div class="product-card__promotion">new</div>
+                    <h2 class="product-card__name">
+                        <a class="product-card__link" href="#">THE <span class="product-card__link_blue">RUNNING</span>
+                            HAS
+                            JUST BEGUN</a>
+                    </h2>
+                    <div class="product-card__rating rating">
+                        <div class="ratig__text">Huarache</div>
+                        <ul class="rating__list">
+                            <li class="rating__item rating__item_active"></li>
+                            <li class="rating__item rating__item_active"></li>
+                            <li class="rating__item rating__item_active"></li>
+                            <li class="rating__item rating__item_active"></li>
+                            <li class="rating__item"></li>
+                        </ul>
+                    </div>
+                    <div class="product-card__price-wrapper">
+                        <span class="product-card__curensy-symbol">$</span>
+                        <span class="product-card__prise">200</span>
+                    </div>
+                    <form class="product-card__action" action="#">
+                        <div class="product-card__size-wrapper">
+                            <div class="product-card__size-text">Size</div>
+                            <ul class="product-card__size-list">
+                                <li class="product-card__size-item">
+                                    <label class="product-card__size-label">
+                                        <input class="product-card__size-input" type="radio" name="size" value="7">
+                                        <span class="product-card__size-value">7</span>
+                                    </label>
+                                </li>
+                                <li class="product-card__size-item">
+                                    <label class="product-card__size-label">
+                                        <input class="product-card__size-input" type="radio" name="size" value="8">
+                                        <span class="product-card__size-value">8</span>
+                                    </label>
+                                </li>
+                                <li class="product-card__size-item">
+                                    <label class="product-card__size-label">
+                                        <input class="product-card__size-input" type="radio" name="size" value="9">
+                                        <span class="product-card__size-value">9</span>
+                                    </label>
+                                </li>
+                                <li class="product-card__size-item">
+                                    <label class="product-card__size-label">
+                                        <input class="product-card__size-input" type="radio" name="size" value="10">
+                                        <span class="product-card__size-value">10</span>
+                                    </label>
+                                </li>
+                                <li class="product-card__size-item">
+                                    <label class="product-card__size-label">
+                                        <input class="product-card__size-input" type="radio" name="size" value="11">
+                                        <span class="product-card__size-value">11</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="product-card__add-to-cart button button_primary" type="submit">Add to
+                            cart</button>
+                    </form>
+                    <button class="product-card__wishlist button button_secondary">Wishlist</button>
+                </div>
+                <a class="product-card__close close" href="#"></a>
+            </section>
+        </div>
+    </main>
+</body>
+
+</html>

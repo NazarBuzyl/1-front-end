@@ -1,0 +1,7 @@
+.modal {
+    background-color: gray;
+    width: 250px;
+    height: 200px;
+    @include position-center;
+    @include bg-cover('../image/img.jpg');
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error {
+            border-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            <strong>{{ message }}</strong>
+            <br><span v-text="message"></span>
+            <br><span v-once>{{ message }}</span>
+        </p>
+        <p>
+            {{ 2 + 2 }}
+            <br>{{ number + 20 }}
+            <br>{{ !(number % 2) ? 'Четное' : 'Не четное' }}
+            <br>{{ message.split('').reverse().join('') }}
+        </p>
+
+        <p>
+            <a v-bind:href="url" v-bind:title="url">{{ url }}</a>
+            <br><a :href="url" :title="url">{{ url }}</a>
+            <br><button :disabled="disabled">{{ disabled ? 'Disabled' : 'Enabled' }}</button>
+        </p>
+
+        <h2>Вычисляемые свойства</h2>
+        <p>
+            <button :disabled="disabled">{{ textBtn }}</button>
+        </p>
+        <p>
+            {{ infoUser }}
+            <!-- так можно, но не нужно -->
+            <br><span v-html="infoUser"></span>
+        </p>
+
+        <h2>Методы</h2>
+        <!-- так не нужно -->
+        <p>{{ getInfoUser() }}</p>
+        <p><button v-on:click="incNumber(5, $event)">{{ number }}</button></p>
+        <p><button @click="incNumber(10, $event)">{{ number }}</button></p>
+
+        <h2 ref="title1">Модификаторы событий</h2>
+        <p><a :href="url" :title="url" @click.prevent>{{ url }}</a></p>
+        <!--
+            .stop событие не будет всплывать дальше
+            .prevent отменить действие по умолчанию
+            .capture аналог делегирования ловим событие на дочернем элементе
+            .self вызов обработчика только в случае наступления события непосредственно на данном элементе
+            .once Событие сработает только 1 раз
+            .passive
+        -->
+
+        <h2 ref="title">Получение DOM элемента</h2>
+        <p><button @click="getElem">color</button></p>
+
+        <h2>Модификаторы клавиш</h2>
+        <p><input type="text" @keyup.enter="submit"></p>
+
+        <h2>Двустороннее связывание</h2>
+        <!-- <input type="text" :value="message" @input="setMessage"> -->
+        <input type="text" v-model.lazy="message">
+        <br>{{message}}
+
+        <div>
+            <div>
+                <input type="text" v-model="firstName">
+                <input type="text" v-model="lastName">
+                <input type="text" v-model="email">
+            </div>
+            <div v-if="isShowPreView">
+                <p>Предварительный просмотр</p>
+                {{ firstName }} {{ lastName }} {{ email }}
+            </div>
+        </div>
+
+        <h2>Условный рендеринг</h2>
+        <p>
+            <span v-if="isShow">Итина</span>
+            <span v-else>Ложь</span>
+        </p>
+        <p>
+            <span v-show="isShow">Итина</span>
+            <span v-show="!isShow">Ложь</span>
+        </p>
+
+        <template v-if="isShow">
+            <h2>Title 1</h2>
+            <p>sdfdsf</p>
+            <p>sdfdsf</p>
+        </template>
+
+        <template v-else>
+            <h2>Title 2</h2>
+            <p>sdfdsf</p>
+            <p>sdfdsf</p>
+        </template>
+
+        <div v-if="type === 'A'">A</div>
+        <div v-else-if="type === 'B'">B</div>
+        <div v-else-if="type === 'C'">C</div>
+        <div v-else>None</div>
+
+        <h2>Отрисовка списков</h2>
+        <ul>
+            <li v-for="(value, index) in list" :key="index">
+                {{ (index + 1 < 10) ? '0' + (index + 1) : index + 1}}. {{ value }} </li>
+        </ul>
+        <p>
+            <span v-for="n in 10"> {{ n }} </span>
+        </p>
+        <div>
+            <h3 :style="{color: (!addUser.name && isValidate) ? 'red' : ''}">Добавить пользователя</h3>
+            <p>
+                <input :class="{error: !addUser.name && isValidate}" type="text" v-model="addUser.name"
+                    placeholder="Name">
+                <br><span v-if="!addUser.name && isValidate">Нет имени</span>
+            </p>
+            <p>
+                <input :class="{error: !addUser.tel && isValidate}" type="text" v-model="addUser.tel" placeholder="Tel">
+                <br><span v-if="!addUser.tel && isValidate">Нет телефона</span>
+            </p>
+            <p>
+                <input :class="{error: !addUser.email && isValidate}" type="text" v-model="addUser.email"
+                    placeholder="Email">
+                <br><span v-if="!addUser.email && isValidate">Нет адреса</span>
+            </p>
+            <button @click="addNewUser">Add</button>
+        </div>
+        <div v-show="addUser.name || addUser.tel || addUser.email">
+            <p>Просмотр пользователя</p>
+            <p>Name: {{ addUser.name }}</p>
+            <p>Tel: {{ addUser.tel }}</p>
+            <p>Email: {{ addUser.email }}</p>
+        </div>
+        <ul>
+            <li v-for="(user, index) in userList" :key="index">
+                {{ (index + 1 < 10) ? '0' + (index + 1) : index + 1}}. Name: <strong>{{ user.name }}</strong>;
+                    Tel: {{ user.tel }};
+                    Email: {{ user.email }}
+                    <button @click="removeUser(index)">remove user</button>
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(value, key) in user">
+                {{ key }}: {{ value }}
+            </li>
+        </ul>
+    </div>
+
+    <div id="sss">
+        {{prim}}
+        <br><button @click="changeNumber">+</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
